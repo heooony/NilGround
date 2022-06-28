@@ -7,14 +7,30 @@
 
 import SwiftUI
 
-struct ThemeCardView: View {
+struct ThemeCardView: View, Hashable {
+    let imagePath: String
+    let itemWidth: CGFloat
+    let itemHeight: CGFloat
+    
+    init(imagePath: String, itemWidth: CGFloat = 250, itemHeight: CGFloat = 400) {
+        self.imagePath = imagePath
+        self.itemWidth = itemWidth
+        self.itemHeight = itemHeight
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(imagePath)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .edgesIgnoringSafeArea(.all)
+            .frame(width: itemWidth, height: itemHeight)
+            .clipped()
+            .shadow(color: .gray, radius: 10.0, x: 0, y: 5.0)
     }
 }
 
 struct ThemeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ThemeCardView()
+        ThemeCardView(imagePath: "LA-street")
     }
 }

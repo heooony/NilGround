@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct NilGroundApp: App {
+    private let viewModel = MainViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView(viewModel: viewModel)
         }
     }
 }

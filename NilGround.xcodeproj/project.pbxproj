@@ -11,6 +11,13 @@
 		B85F1B712869BF98007A3AB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F1B702869BF98007A3AB3 /* ContentView.swift */; };
 		B85F1B732869BF99007A3AB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B722869BF99007A3AB3 /* Assets.xcassets */; };
 		B85F1B762869BF99007A3AB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B752869BF99007A3AB3 /* Preview Assets.xcassets */; };
+		B85F1B812869C056007A3AB3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F1B802869C056007A3AB3 /* MainView.swift */; };
+		B85F1B8F2869F1FC007A3AB3 /* NanumMyeongjo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B8D2869F1E5007A3AB3 /* NanumMyeongjo-ExtraBold.ttf */; };
+		B85F1B902869F1FF007A3AB3 /* NanumMyeongjo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B8E2869F1E5007A3AB3 /* NanumMyeongjo-Regular.ttf */; };
+		B85F1B912869F201007A3AB3 /* NanumMyeongjo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B8C2869F1E5007A3AB3 /* NanumMyeongjo-Bold.ttf */; };
+		B8C91490286AAD5E00D80CCB /* ThemeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C9148F286AAD5E00D80CCB /* ThemeCard.swift */; };
+		B8C91492286AADE900D80CCB /* ThemeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C91491286AADE900D80CCB /* ThemeCardView.swift */; };
+		B8C91494286AAE7D00D80CCB /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C91493286AAE7D00D80CCB /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		B85F1B702869BF98007A3AB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B85F1B722869BF99007A3AB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B85F1B752869BF99007A3AB3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B85F1B802869C056007A3AB3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B85F1B8C2869F1E5007A3AB3 /* NanumMyeongjo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Bold.ttf"; sourceTree = "<group>"; };
+		B85F1B8D2869F1E5007A3AB3 /* NanumMyeongjo-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-ExtraBold.ttf"; sourceTree = "<group>"; };
+		B85F1B8E2869F1E5007A3AB3 /* NanumMyeongjo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Regular.ttf"; sourceTree = "<group>"; };
+		B8C9148F286AAD5E00D80CCB /* ThemeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCard.swift; sourceTree = "<group>"; };
+		B8C91491286AADE900D80CCB /* ThemeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCardView.swift; sourceTree = "<group>"; };
+		B8C91493286AAE7D00D80CCB /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +65,9 @@
 		B85F1B6D2869BF98007A3AB3 /* NilGround */ = {
 			isa = PBXGroup;
 			children = (
+				B8C9148D286AAD1700D80CCB /* Util */,
+				B8C9148C286AAD1200D80CCB /* Model */,
+				B85F1B7C2869BFA3007A3AB3 /* Core */,
 				B85F1B6E2869BF98007A3AB3 /* NilGroundApp.swift */,
 				B85F1B702869BF98007A3AB3 /* ContentView.swift */,
 				B85F1B722869BF99007A3AB3 /* Assets.xcassets */,
@@ -65,6 +82,82 @@
 				B85F1B752869BF99007A3AB3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B85F1B7C2869BFA3007A3AB3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B85F1B842869DE7F007A3AB3 /* Component */,
+				B85F1B7D2869BFA6007A3AB3 /* Main */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B85F1B7D2869BFA6007A3AB3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B85F1B7F2869BFAF007A3AB3 /* ViewModel */,
+				B85F1B7E2869BFAB007A3AB3 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B85F1B7E2869BFAB007A3AB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B85F1B802869C056007A3AB3 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B85F1B7F2869BFAF007A3AB3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B8C91493286AAE7D00D80CCB /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B85F1B842869DE7F007A3AB3 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B8C91491286AADE900D80CCB /* ThemeCardView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		B85F1B852869F1AE007A3AB3 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				B85F1B8C2869F1E5007A3AB3 /* NanumMyeongjo-Bold.ttf */,
+				B85F1B8D2869F1E5007A3AB3 /* NanumMyeongjo-ExtraBold.ttf */,
+				B85F1B8E2869F1E5007A3AB3 /* NanumMyeongjo-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		B8C9148C286AAD1200D80CCB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B8C9148E286AAD5500D80CCB /* Theme */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B8C9148D286AAD1700D80CCB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B85F1B852869F1AE007A3AB3 /* Font */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		B8C9148E286AAD5500D80CCB /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				B8C9148F286AAD5E00D80CCB /* ThemeCard.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +219,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B85F1B762869BF99007A3AB3 /* Preview Assets.xcassets in Resources */,
+				B85F1B8F2869F1FC007A3AB3 /* NanumMyeongjo-ExtraBold.ttf in Resources */,
 				B85F1B732869BF99007A3AB3 /* Assets.xcassets in Resources */,
+				B85F1B912869F201007A3AB3 /* NanumMyeongjo-Bold.ttf in Resources */,
+				B85F1B902869F1FF007A3AB3 /* NanumMyeongjo-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +234,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B85F1B712869BF98007A3AB3 /* ContentView.swift in Sources */,
+				B8C91492286AADE900D80CCB /* ThemeCardView.swift in Sources */,
+				B85F1B812869C056007A3AB3 /* MainView.swift in Sources */,
 				B85F1B6F2869BF98007A3AB3 /* NilGroundApp.swift in Sources */,
+				B8C91490286AAD5E00D80CCB /* ThemeCard.swift in Sources */,
+				B8C91494286AAE7D00D80CCB /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

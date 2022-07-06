@@ -8,9 +8,50 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var selectedIndex = 0
+    
+    let tabBarImageNames = ["house", "gearshape"]
+    
+    init() {
+        UITabBar.appearance().barTintColor = .systemBackground
+    }
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            VStack {
+                ZStack {
+                    switch selectedIndex {
+                    case 0:
+                        MainView()
+                    case 1:
+                        Text("Remaining tabs2")
+                    default:
+                        Text("")
+                    }
+                
+                }
+                
+                Spacer()
+                
+                HStack {
+                    ForEach(0..<2) { num in
+                        Button {
+                            selectedIndex = num
+                        } label: {
+                            Spacer()
+                            Image(systemName: tabBarImageNames[num])
+                                .font(.system(size: 18, weight: .bold))
+                                .foregroundColor(selectedIndex == num ? Color(.black) : .init(white: 0.8))
+                            
+                            Spacer()
+                        }
+
+                    }
+                }
+            }
+            .navigationBarHidden(true)
+        }
     }
 }
 

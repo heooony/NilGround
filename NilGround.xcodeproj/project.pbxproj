@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B80518A52872D44300E984DA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80518A42872D44300E984DA /* Theme.swift */; };
+		B80518A72872F51700E984DA /* ThemeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80518A62872F51700E984DA /* ThemeCardView.swift */; };
+		B80518AE2873229B00E984DA /* ThemeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80518AD2873229B00E984DA /* ThemeDetailView.swift */; };
+		B80518B028733DEA00E984DA /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80518AF28733DEA00E984DA /* StarsView.swift */; };
+		B82EDC6A28751D3D00FCA14D /* MainThemeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82EDC6928751D3D00FCA14D /* MainThemeItem.swift */; };
+		B82EDC6E28758F9D00FCA14D /* MainThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82EDC6D28758F9D00FCA14D /* MainThemeView.swift */; };
 		B85F1B6F2869BF98007A3AB3 /* NilGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F1B6E2869BF98007A3AB3 /* NilGroundApp.swift */; };
 		B85F1B712869BF98007A3AB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F1B702869BF98007A3AB3 /* ContentView.swift */; };
 		B85F1B732869BF99007A3AB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B722869BF99007A3AB3 /* Assets.xcassets */; };
@@ -15,12 +21,34 @@
 		B85F1B8F2869F1FC007A3AB3 /* NanumMyeongjo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B8D2869F1E5007A3AB3 /* NanumMyeongjo-ExtraBold.ttf */; };
 		B85F1B902869F1FF007A3AB3 /* NanumMyeongjo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B8E2869F1E5007A3AB3 /* NanumMyeongjo-Regular.ttf */; };
 		B85F1B912869F201007A3AB3 /* NanumMyeongjo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B8C2869F1E5007A3AB3 /* NanumMyeongjo-Bold.ttf */; };
-		B8C91490286AAD5E00D80CCB /* ThemeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C9148F286AAD5E00D80CCB /* ThemeCard.swift */; };
-		B8C91492286AADE900D80CCB /* ThemeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C91491286AADE900D80CCB /* ThemeCardView.swift */; };
-		B8C91494286AAE7D00D80CCB /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C91493286AAE7D00D80CCB /* MainViewModel.swift */; };
+		B8A4768C2873F24500527F71 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A4768B2873F24500527F71 /* Spot.swift */; };
+		B8AF4BE12872ACB100DF3E48 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AF4BE02872ACB100DF3E48 /* HexColor.swift */; };
+		B8F27E5E28741C8D00AB126E /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E5D28741C8D00AB126E /* CustomCorner.swift */; };
+		B8F27E6028741C8F00AB126E /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E5F28741C8F00AB126E /* BlurView.swift */; };
+		B8F27E6228741D2900AB126E /* SpotCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E6128741D2900AB126E /* SpotCardItem.swift */; };
+		B8F27E6428741E1600AB126E /* SpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E6328741E1600AB126E /* SpotView.swift */; };
+		B8F27E6828742A8400AB126E /* Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E6728742A8400AB126E /* Stars.swift */; };
+		B8F27E6A28742A8800AB126E /* Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E6928742A8800AB126E /* Likes.swift */; };
+		B8F27E6D28742EBD00AB126E /* ThemeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E6C28742EBD00AB126E /* ThemeCellViewModel.swift */; };
+		B8F27E6F2874314C00AB126E /* ThemeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E6E2874314C00AB126E /* ThemeListViewModel.swift */; };
+		B8F27E7628743E3900AB126E /* MainCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E7528743E3900AB126E /* MainCard.swift */; };
+		B8F27E7828743E5600AB126E /* MainCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E7728743E5600AB126E /* MainCardDetail.swift */; };
+		B8F27E7C2874418B00AB126E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8F27E7B2874418B00AB126E /* GoogleService-Info.plist */; };
+		B8F27E852874478B00AB126E /* ThemeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E842874478B00AB126E /* ThemeRepository.swift */; };
+		B8F27E912874484700AB126E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B8F27E902874484700AB126E /* FirebaseAnalytics */; };
+		B8F27E932874484700AB126E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B8F27E922874484700AB126E /* FirebaseAuth */; };
+		B8F27E952874484700AB126E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B8F27E942874484700AB126E /* FirebaseFirestore */; };
+		B8F27E972874484700AB126E /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B8F27E962874484700AB126E /* FirebaseFirestoreSwift */; };
+		B8F48951286B0B6E005788F0 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F48950286B0B6E005788F0 /* ScreenSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B80518A42872D44300E984DA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B80518A62872F51700E984DA /* ThemeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCardView.swift; sourceTree = "<group>"; };
+		B80518AD2873229B00E984DA /* ThemeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailView.swift; sourceTree = "<group>"; };
+		B80518AF28733DEA00E984DA /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
+		B82EDC6928751D3D00FCA14D /* MainThemeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainThemeItem.swift; sourceTree = "<group>"; };
+		B82EDC6D28758F9D00FCA14D /* MainThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainThemeView.swift; sourceTree = "<group>"; };
 		B85F1B6B2869BF98007A3AB3 /* NilGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NilGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85F1B6E2869BF98007A3AB3 /* NilGroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NilGroundApp.swift; sourceTree = "<group>"; };
 		B85F1B702869BF98007A3AB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,9 +58,22 @@
 		B85F1B8C2869F1E5007A3AB3 /* NanumMyeongjo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Bold.ttf"; sourceTree = "<group>"; };
 		B85F1B8D2869F1E5007A3AB3 /* NanumMyeongjo-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-ExtraBold.ttf"; sourceTree = "<group>"; };
 		B85F1B8E2869F1E5007A3AB3 /* NanumMyeongjo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Regular.ttf"; sourceTree = "<group>"; };
-		B8C9148F286AAD5E00D80CCB /* ThemeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCard.swift; sourceTree = "<group>"; };
-		B8C91491286AADE900D80CCB /* ThemeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCardView.swift; sourceTree = "<group>"; };
-		B8C91493286AAE7D00D80CCB /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		B8A4768B2873F24500527F71 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		B8AF4BE02872ACB100DF3E48 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
+		B8C91495286ACD9200D80CCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B8F27E5D28741C8D00AB126E /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
+		B8F27E5F28741C8F00AB126E /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		B8F27E6128741D2900AB126E /* SpotCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCardItem.swift; sourceTree = "<group>"; };
+		B8F27E6328741E1600AB126E /* SpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotView.swift; sourceTree = "<group>"; };
+		B8F27E6728742A8400AB126E /* Stars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stars.swift; sourceTree = "<group>"; };
+		B8F27E6928742A8800AB126E /* Likes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Likes.swift; sourceTree = "<group>"; };
+		B8F27E6C28742EBD00AB126E /* ThemeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCellViewModel.swift; sourceTree = "<group>"; };
+		B8F27E6E2874314C00AB126E /* ThemeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeListViewModel.swift; sourceTree = "<group>"; };
+		B8F27E7528743E3900AB126E /* MainCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCard.swift; sourceTree = "<group>"; };
+		B8F27E7728743E5600AB126E /* MainCardDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardDetail.swift; sourceTree = "<group>"; };
+		B8F27E7B2874418B00AB126E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B8F27E842874478B00AB126E /* ThemeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeRepository.swift; sourceTree = "<group>"; };
+		B8F48950286B0B6E005788F0 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,12 +81,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F27E912874484700AB126E /* FirebaseAnalytics in Frameworks */,
+				B8F27E932874484700AB126E /* FirebaseAuth in Frameworks */,
+				B8F27E952874484700AB126E /* FirebaseFirestore in Frameworks */,
+				B8F27E972874484700AB126E /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B82EDC6828751ADE00FCA14D /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				B80518A62872F51700E984DA /* ThemeCardView.swift */,
+				B8F27E7728743E5600AB126E /* MainCardDetail.swift */,
+				B8F27E7528743E3900AB126E /* MainCard.swift */,
+				B80518AD2873229B00E984DA /* ThemeDetailView.swift */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
 		B85F1B622869BF98007A3AB3 = {
 			isa = PBXGroup;
 			children = (
@@ -65,12 +121,18 @@
 		B85F1B6D2869BF98007A3AB3 /* NilGround */ = {
 			isa = PBXGroup;
 			children = (
+				B82EDC6828751ADE00FCA14D /* Update */,
 				B8C9148D286AAD1700D80CCB /* Util */,
+				B85F1B842869DE7F007A3AB3 /* Components */,
+				B8F27E832874477200AB126E /* Repository */,
 				B8C9148C286AAD1200D80CCB /* Model */,
-				B85F1B7C2869BFA3007A3AB3 /* Core */,
+				B8F27E6B28742BA400AB126E /* ViewModels */,
+				B8F27E5C28741C6700AB126E /* Views */,
+				B85F1B722869BF99007A3AB3 /* Assets.xcassets */,
 				B85F1B6E2869BF98007A3AB3 /* NilGroundApp.swift */,
 				B85F1B702869BF98007A3AB3 /* ContentView.swift */,
-				B85F1B722869BF99007A3AB3 /* Assets.xcassets */,
+				B8C91495286ACD9200D80CCB /* Info.plist */,
+				B8F27E7B2874418B00AB126E /* GoogleService-Info.plist */,
 				B85F1B742869BF99007A3AB3 /* Preview Content */,
 			);
 			path = NilGround;
@@ -84,46 +146,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		B85F1B7C2869BFA3007A3AB3 /* Core */ = {
+		B85F1B842869DE7F007A3AB3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B85F1B842869DE7F007A3AB3 /* Component */,
-				B85F1B7D2869BFA6007A3AB3 /* Main */,
+				B8F27E6128741D2900AB126E /* SpotCardItem.swift */,
+				B8F27E5F28741C8F00AB126E /* BlurView.swift */,
+				B8F27E5D28741C8D00AB126E /* CustomCorner.swift */,
+				B80518AF28733DEA00E984DA /* StarsView.swift */,
 			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		B85F1B7D2869BFA6007A3AB3 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				B85F1B7F2869BFAF007A3AB3 /* ViewModel */,
-				B85F1B7E2869BFAB007A3AB3 /* View */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		B85F1B7E2869BFAB007A3AB3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B85F1B802869C056007A3AB3 /* MainView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B85F1B7F2869BFAF007A3AB3 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				B8C91493286AAE7D00D80CCB /* MainViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		B85F1B842869DE7F007A3AB3 /* Component */ = {
-			isa = PBXGroup;
-			children = (
-				B8C91491286AADE900D80CCB /* ThemeCardView.swift */,
-			);
-			path = Component;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		B85F1B852869F1AE007A3AB3 /* Font */ = {
@@ -139,7 +170,10 @@
 		B8C9148C286AAD1200D80CCB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B8C9148E286AAD5500D80CCB /* Theme */,
+				B80518A42872D44300E984DA /* Theme.swift */,
+				B8A4768B2873F24500527F71 /* Spot.swift */,
+				B8F27E6728742A8400AB126E /* Stars.swift */,
+				B8F27E6928742A8800AB126E /* Likes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,16 +182,46 @@
 			isa = PBXGroup;
 			children = (
 				B85F1B852869F1AE007A3AB3 /* Font */,
+				B8F48950286B0B6E005788F0 /* ScreenSize.swift */,
+				B8AF4BE02872ACB100DF3E48 /* HexColor.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
 		};
-		B8C9148E286AAD5500D80CCB /* Theme */ = {
+		B8F27E5C28741C6700AB126E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B8C9148F286AAD5E00D80CCB /* ThemeCard.swift */,
+				B8F27E7028743D7D00AB126E /* Main */,
+				B8F27E6328741E1600AB126E /* SpotView.swift */,
 			);
-			path = Theme;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B8F27E6B28742BA400AB126E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B8F27E6C28742EBD00AB126E /* ThemeCellViewModel.swift */,
+				B8F27E6E2874314C00AB126E /* ThemeListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B8F27E7028743D7D00AB126E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B85F1B802869C056007A3AB3 /* MainView.swift */,
+				B82EDC6928751D3D00FCA14D /* MainThemeItem.swift */,
+				B82EDC6D28758F9D00FCA14D /* MainThemeView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B8F27E832874477200AB126E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B8F27E842874478B00AB126E /* ThemeRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +240,12 @@
 			dependencies = (
 			);
 			name = NilGround;
+			packageProductDependencies = (
+				B8F27E902874484700AB126E /* FirebaseAnalytics */,
+				B8F27E922874484700AB126E /* FirebaseAuth */,
+				B8F27E942874484700AB126E /* FirebaseFirestore */,
+				B8F27E962874484700AB126E /* FirebaseFirestoreSwift */,
+			);
 			productName = NilGround;
 			productReference = B85F1B6B2869BF98007A3AB3 /* NilGround.app */;
 			productType = "com.apple.product-type.application";
@@ -204,6 +274,9 @@
 				Base,
 			);
 			mainGroup = B85F1B622869BF98007A3AB3;
+			packageReferences = (
+				B8F27E8F2874484700AB126E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = B85F1B6C2869BF98007A3AB3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -223,6 +296,7 @@
 				B85F1B732869BF99007A3AB3 /* Assets.xcassets in Resources */,
 				B85F1B912869F201007A3AB3 /* NanumMyeongjo-Bold.ttf in Resources */,
 				B85F1B902869F1FF007A3AB3 /* NanumMyeongjo-Regular.ttf in Resources */,
+				B8F27E7C2874418B00AB126E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,12 +307,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B82EDC6E28758F9D00FCA14D /* MainThemeView.swift in Sources */,
+				B8F27E6D28742EBD00AB126E /* ThemeCellViewModel.swift in Sources */,
+				B8F27E6828742A8400AB126E /* Stars.swift in Sources */,
+				B8F27E6F2874314C00AB126E /* ThemeListViewModel.swift in Sources */,
+				B8AF4BE12872ACB100DF3E48 /* HexColor.swift in Sources */,
+				B80518AE2873229B00E984DA /* ThemeDetailView.swift in Sources */,
+				B8F27E6028741C8F00AB126E /* BlurView.swift in Sources */,
+				B8F27E6A28742A8800AB126E /* Likes.swift in Sources */,
 				B85F1B712869BF98007A3AB3 /* ContentView.swift in Sources */,
-				B8C91492286AADE900D80CCB /* ThemeCardView.swift in Sources */,
+				B8F27E852874478B00AB126E /* ThemeRepository.swift in Sources */,
+				B80518A72872F51700E984DA /* ThemeCardView.swift in Sources */,
+				B82EDC6A28751D3D00FCA14D /* MainThemeItem.swift in Sources */,
 				B85F1B812869C056007A3AB3 /* MainView.swift in Sources */,
+				B8F27E6228741D2900AB126E /* SpotCardItem.swift in Sources */,
+				B80518A52872D44300E984DA /* Theme.swift in Sources */,
+				B8F27E6428741E1600AB126E /* SpotView.swift in Sources */,
 				B85F1B6F2869BF98007A3AB3 /* NilGroundApp.swift in Sources */,
-				B8C91490286AAD5E00D80CCB /* ThemeCard.swift in Sources */,
-				B8C91494286AAE7D00D80CCB /* MainViewModel.swift in Sources */,
+				B8A4768C2873F24500527F71 /* Spot.swift in Sources */,
+				B8F27E7628743E3900AB126E /* MainCard.swift in Sources */,
+				B80518B028733DEA00E984DA /* StarsView.swift in Sources */,
+				B8F27E5E28741C8D00AB126E /* CustomCorner.swift in Sources */,
+				B8F48951286B0B6E005788F0 /* ScreenSize.swift in Sources */,
+				B8F27E7828743E5600AB126E /* MainCardDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +461,7 @@
 				DEVELOPMENT_TEAM = V3MNWMQX37;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NilGround/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -380,7 +472,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.application.NilGround;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.oueya.NilGround;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -399,6 +491,7 @@
 				DEVELOPMENT_TEAM = V3MNWMQX37;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NilGround/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -409,7 +502,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.application.NilGround;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.oueya.NilGround;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -439,6 +532,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B8F27E8F2874484700AB126E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B8F27E902874484700AB126E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8F27E8F2874484700AB126E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		B8F27E922874484700AB126E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8F27E8F2874484700AB126E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		B8F27E942874484700AB126E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8F27E8F2874484700AB126E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		B8F27E962874484700AB126E /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8F27E8F2874484700AB126E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B85F1B632869BF98007A3AB3 /* Project object */;
 }

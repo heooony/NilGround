@@ -9,8 +9,11 @@ import SwiftUI
 
 struct MainThemeView: View {
     
+    let themeCellVM: ThemeCellViewModel
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
-        ZStack(alignment: .center) {
+        ZStack(alignment: .topTrailing) {
             Image("cafe")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -39,19 +42,19 @@ struct MainThemeView: View {
                     )
                     .padding(.bottom, 20)
                 
-                Text("한 번 가면 잊을 수 없는 카페")
+                Text(themeCellVM.theme.title)
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundStyle(.white)
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
                 
-                Text("20 SECTIONS, 3 HOURS")
+                Text("\(Date(timeIntervalSince1970: TimeInterval(themeCellVM.theme.createdDate!.seconds)))")
                     .font(.footnote)
                     .fontWeight(.semibold)
                     .foregroundStyle(.white)
                 
-                Text("Design an iOS app for iOS 15 with custom layout..")
+                Text(themeCellVM.theme.description)
                     .font(.footnote)
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
@@ -62,7 +65,7 @@ struct MainThemeView: View {
             .padding(.all, 20.0)
             
             Button {
-                
+                presentationMode.wrappedValue.dismiss()
             } label: {
                 Image(systemName: "xmark")
                     .font(.body.weight(.bold))
@@ -70,20 +73,18 @@ struct MainThemeView: View {
                     .padding(8)
                     .background(.ultraThinMaterial, in: Circle())
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-            .padding(20)
-            .padding(.top, 20)
-            
+            .padding(30)
+            .padding(.top, 25)
         }
         .ignoresSafeArea()
-        
-        
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
     }
 }
 
-struct MainThemeView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        MainThemeView()
-    }
-}
+//struct MainThemeView_Previews: PreviewProvider {
+//    
+//    static var previews: some View {
+//        MainThemeView()
+//    }
+//}

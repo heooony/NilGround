@@ -15,6 +15,7 @@ struct Theme: Codable, Identifiable {
     let title: String
     let description: String
     let image: String
+    let stars: Int
     let category: String
     @ServerTimestamp var createdDate: Timestamp?
 }

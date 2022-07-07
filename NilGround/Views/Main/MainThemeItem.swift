@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainThemeItem: View {
+    let themeCellVM: ThemeCellViewModel
     
     var body: some View {
         VStack {
@@ -35,19 +36,19 @@ struct MainThemeItem: View {
             }
             
             VStack(alignment: .leading, spacing: 8.0) {
-                Text("한 번 가면 잊을 수 없는 카페")
+                Text(themeCellVM.theme.title)
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.7)], startPoint: .topLeading, endPoint: .bottomTrailing))
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
                 
-                Text("20 SECTIONS, 3 HOURS")
+                Text("\(Date(timeIntervalSince1970: TimeInterval(themeCellVM.theme.createdDate!.seconds)))")
                     .font(.footnote)
                     .fontWeight(.semibold)
                     .foregroundStyle(.secondary)
                 
-                Text("Design an iOS app for iOS 15 with custom layout..")
+                Text(themeCellVM.theme.description)
                     .font(.footnote)
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
@@ -55,6 +56,8 @@ struct MainThemeItem: View {
                     .foregroundColor(.secondary)
             }
             .padding(.all, 20.0)
+            
+            Spacer()
         }
         .frame(height: 350.0)
         .background(
@@ -67,8 +70,8 @@ struct MainThemeItem: View {
 }
 
 struct MainThemeItem_Previews: PreviewProvider {
-    
+    @ObservedObject var themeListVM = ThemeListViewModel()
     static var previews: some View {
-        MainThemeItem()
+        MainView()
     }
 }

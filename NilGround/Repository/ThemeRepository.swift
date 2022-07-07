@@ -19,7 +19,7 @@ class ThemeRepository: ObservableObject {
     }
     
     func loadData() {
-        db.collection("Themes").addSnapshotListener { querySnapshow, error in
+        db.collection("themes").addSnapshotListener { querySnapshow, error in
             if let querySnapshot = querySnapshow {
                 self.themes = querySnapshot.documents.compactMap { document in
                     do {

@@ -12,10 +12,9 @@ struct MainView: View {
     @ObservedObject var themeListVM = ThemeListViewModel()
     @State var isActive: String? = ""
     @State var showCategory: Bool = true
-    @State var choiceCategory = "Trip"
+    @State var choiceCategory = categories.first!
     @Namespace var animation
     @State var detail = false
-    let categories = ["Trip", "Place", "Food", "Culture"]
     
     var body: some View {
         
@@ -38,8 +37,8 @@ struct MainView: View {
                 if showCategory {
                     ScrollView(.horizontal) {
                         HStack(alignment: .bottom, spacing: 20) {
-                            ForEach(categories, id: \.self) { category in
-                                Text(category)
+                            ForEach(categories) { category in
+                                Text(category.name)
                                     .font(isSelected(category) ? .title.bold() : .title3)
                                     .foregroundColor(isSelected(category) ? .primary : .secondary)
                                     .onTapGesture {
@@ -49,7 +48,6 @@ struct MainView: View {
                                     }
                             }
                         }
-                        
                         .padding(.horizontal, 20)
                     }
                     .padding(.bottom, 10)
@@ -60,37 +58,55 @@ struct MainView: View {
                         ForEach(themeListVM.themeCellViewModels) { themeCellVM in
                             ZStack {
                                 NavigationLink(tag: themeCellVM.id, selection: $isActive) {
-                                    MainThemeView()
+                                    MainThemeView(themeCellVM: themeCellVM)
                                 } label: {
                                     Color.clear
-                                }.disabled(true)
-                                MainThemeItem()
+                                }
+                                .disabled(true)
+                                
+                                MainThemeItem(themeCellVM: themeCellVM)
+                                    .gesture(
+                                        DragGesture().onChanged { value in
+                                            if value.translation.height > 0 {
+                                                withAnimation {
+                                                    showCategory = true
+                                                }
+                                            }
+                                            if value.translation.height < 0 {
+                                                withAnimation {
+                                                    showCategory = false
+                                                }
+                                            }
+                                        }
+                                    )
                                     .onTapGesture {
                                         isActive = themeCellVM.id
                                     }
                             }
                         }
                     }
+                    
                 }
-                .gesture(
-                    DragGesture().onChanged { value in
-                        if value.translation.height > 0 {
-                            withAnimation {
-                                showCategory = true
-                            }
-                        }
-                        if value.translation.height < 0 {
-                            withAnimation {
-                                showCategory = false
-                            }
-                        }
-                    }
-                )
             }
+            NavigationLink {
+                AddTheme()
+            } label: {
+                Image(systemName: "plus")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .padding(20)
+                    .background(
+                        Circle()
+                            .foregroundColor(Color(0xFF6666))
+                    )
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                    .padding(20)
+            }
+            .buttonStyle(PlainButtonStyle())
         }
     }
     
-    func isSelected(_ category: String) -> Bool {
+    func isSelected(_ category: Category) -> Bool {
         return choiceCategory == category
     }
     

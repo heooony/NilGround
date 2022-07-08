@@ -17,5 +17,17 @@ struct Theme: Codable, Identifiable {
     let image: String
     let stars: Int
     let category: String
+    let spotCount: Int
+    let hits: Int
     @ServerTimestamp var createdDate: Timestamp?
+    
+    init(title: String, description: String, image: String, category: String) {
+        self.title = title
+        self.description = description
+        self.image = image
+        self.stars = 0
+        self.spotCount = 0
+        self.hits = 0
+        self.category = category
+    }
 }

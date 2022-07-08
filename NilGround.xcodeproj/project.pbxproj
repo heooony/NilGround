@@ -12,9 +12,15 @@
 		B80518AE2873229B00E984DA /* ThemeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80518AD2873229B00E984DA /* ThemeDetailView.swift */; };
 		B80518B028733DEA00E984DA /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80518AF28733DEA00E984DA /* StarsView.swift */; };
 		B82EDC6A28751D3D00FCA14D /* MainThemeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82EDC6928751D3D00FCA14D /* MainThemeItem.swift */; };
-		B82EDC6E28758F9D00FCA14D /* MainThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82EDC6D28758F9D00FCA14D /* MainThemeView.swift */; };
+		B82EDC6E28758F9D00FCA14D /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82EDC6D28758F9D00FCA14D /* ThemeView.swift */; };
 		B83F6EA02875E0C5005035E2 /* AddTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83F6E9F2875E0C5005035E2 /* AddTheme.swift */; };
 		B84490B828765E4D00086B4C /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84490B728765E4D00086B4C /* PhotoPicker.swift */; };
+		B8584B822877F4A600669D68 /* SpotCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8584B812877F4A600669D68 /* SpotCellViewModel.swift */; };
+		B8584B842877F4B100669D68 /* SpotListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8584B832877F4B100669D68 /* SpotListViewModel.swift */; };
+		B8584B862877F4E600669D68 /* SpotRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8584B852877F4E600669D68 /* SpotRepository.swift */; };
+		B8584B892878064100669D68 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8584B882878064100669D68 /* TestView.swift */; };
+		B8584B8C2878084300669D68 /* ThemeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8584B8B2878084300669D68 /* ThemeMapView.swift */; };
+		B8584B8E287809C800669D68 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8584B8D287809C800669D68 /* MapViewModel.swift */; };
 		B85F1B6F2869BF98007A3AB3 /* NilGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F1B6E2869BF98007A3AB3 /* NilGroundApp.swift */; };
 		B85F1B712869BF98007A3AB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F1B702869BF98007A3AB3 /* ContentView.swift */; };
 		B85F1B732869BF99007A3AB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B722869BF99007A3AB3 /* Assets.xcassets */; };
@@ -37,22 +43,27 @@
 		B8F27E7828743E5600AB126E /* MainCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E7728743E5600AB126E /* MainCardDetail.swift */; };
 		B8F27E7C2874418B00AB126E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8F27E7B2874418B00AB126E /* GoogleService-Info.plist */; };
 		B8F27E852874478B00AB126E /* ThemeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E842874478B00AB126E /* ThemeRepository.swift */; };
-		B8F27E912874484700AB126E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B8F27E902874484700AB126E /* FirebaseAnalytics */; };
-		B8F27E932874484700AB126E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B8F27E922874484700AB126E /* FirebaseAuth */; };
-		B8F27E952874484700AB126E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B8F27E942874484700AB126E /* FirebaseFirestore */; };
-		B8F27E972874484700AB126E /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B8F27E962874484700AB126E /* FirebaseFirestoreSwift */; };
 		B8F48951286B0B6E005788F0 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F48950286B0B6E005788F0 /* ScreenSize.swift */; };
+		C472D4AC0EC35A5F2E19A523 /* Pods_NilGround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC0484B68B8A4D91A2EA366 /* Pods_NilGround.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		69562D02E4785D0B08A0E2B4 /* Pods-NilGround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NilGround.release.xcconfig"; path = "Target Support Files/Pods-NilGround/Pods-NilGround.release.xcconfig"; sourceTree = "<group>"; };
+		9E292D06FC3A67919D063C62 /* Pods-NilGround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NilGround.debug.xcconfig"; path = "Target Support Files/Pods-NilGround/Pods-NilGround.debug.xcconfig"; sourceTree = "<group>"; };
 		B80518A42872D44300E984DA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		B80518A62872F51700E984DA /* ThemeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCardView.swift; sourceTree = "<group>"; };
 		B80518AD2873229B00E984DA /* ThemeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailView.swift; sourceTree = "<group>"; };
 		B80518AF28733DEA00E984DA /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		B82EDC6928751D3D00FCA14D /* MainThemeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainThemeItem.swift; sourceTree = "<group>"; };
-		B82EDC6D28758F9D00FCA14D /* MainThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainThemeView.swift; sourceTree = "<group>"; };
+		B82EDC6D28758F9D00FCA14D /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		B83F6E9F2875E0C5005035E2 /* AddTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTheme.swift; sourceTree = "<group>"; };
 		B84490B728765E4D00086B4C /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		B8584B812877F4A600669D68 /* SpotCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCellViewModel.swift; sourceTree = "<group>"; };
+		B8584B832877F4B100669D68 /* SpotListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListViewModel.swift; sourceTree = "<group>"; };
+		B8584B852877F4E600669D68 /* SpotRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRepository.swift; sourceTree = "<group>"; };
+		B8584B882878064100669D68 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		B8584B8B2878084300669D68 /* ThemeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeMapView.swift; sourceTree = "<group>"; };
+		B8584B8D287809C800669D68 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		B85F1B6B2869BF98007A3AB3 /* NilGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NilGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85F1B6E2869BF98007A3AB3 /* NilGroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NilGroundApp.swift; sourceTree = "<group>"; };
 		B85F1B702869BF98007A3AB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +89,7 @@
 		B8F27E7B2874418B00AB126E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B8F27E842874478B00AB126E /* ThemeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeRepository.swift; sourceTree = "<group>"; };
 		B8F48950286B0B6E005788F0 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		BCC0484B68B8A4D91A2EA366 /* Pods_NilGround.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NilGround.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,16 +97,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8F27E912874484700AB126E /* FirebaseAnalytics in Frameworks */,
-				B8F27E932874484700AB126E /* FirebaseAuth in Frameworks */,
-				B8F27E952874484700AB126E /* FirebaseFirestore in Frameworks */,
-				B8F27E972874484700AB126E /* FirebaseFirestoreSwift in Frameworks */,
+				C472D4AC0EC35A5F2E19A523 /* Pods_NilGround.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		314514235E74B36AA03F0B3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCC0484B68B8A4D91A2EA366 /* Pods_NilGround.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79866716538B2F38E9A4413E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E292D06FC3A67919D063C62 /* Pods-NilGround.debug.xcconfig */,
+				69562D02E4785D0B08A0E2B4 /* Pods-NilGround.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B82EDC6828751ADE00FCA14D /* Update */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,11 +147,30 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		B8584B872878042E00669D68 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				B82EDC6D28758F9D00FCA14D /* ThemeView.swift */,
+				B8584B8B2878084300669D68 /* ThemeMapView.swift */,
+				B8584B882878064100669D68 /* TestView.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		B8584B8A2878083200669D68 /* Spot */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Spot;
+			sourceTree = "<group>";
+		};
 		B85F1B622869BF98007A3AB3 = {
 			isa = PBXGroup;
 			children = (
 				B85F1B6D2869BF98007A3AB3 /* NilGround */,
 				B85F1B6C2869BF98007A3AB3 /* Products */,
+				79866716538B2F38E9A4413E /* Pods */,
+				314514235E74B36AA03F0B3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +258,8 @@
 		B8F27E5C28741C6700AB126E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B8584B8A2878083200669D68 /* Spot */,
+				B8584B872878042E00669D68 /* Theme */,
 				B83F6E9E2875E0A2005035E2 /* AddTheme */,
 				B8F27E7028743D7D00AB126E /* Main */,
 			);
@@ -224,6 +271,9 @@
 			children = (
 				B8F27E6C28742EBD00AB126E /* ThemeCellViewModel.swift */,
 				B8F27E6E2874314C00AB126E /* ThemeListViewModel.swift */,
+				B8584B812877F4A600669D68 /* SpotCellViewModel.swift */,
+				B8584B832877F4B100669D68 /* SpotListViewModel.swift */,
+				B8584B8D287809C800669D68 /* MapViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -233,7 +283,6 @@
 			children = (
 				B85F1B802869C056007A3AB3 /* MainView.swift */,
 				B82EDC6928751D3D00FCA14D /* MainThemeItem.swift */,
-				B82EDC6D28758F9D00FCA14D /* MainThemeView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -242,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				B8F27E842874478B00AB126E /* ThemeRepository.swift */,
+				B8584B852877F4E600669D68 /* SpotRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -253,21 +303,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B85F1B792869BF99007A3AB3 /* Build configuration list for PBXNativeTarget "NilGround" */;
 			buildPhases = (
+				73CBDB8C9133F78DD67776EA /* [CP] Check Pods Manifest.lock */,
 				B85F1B672869BF98007A3AB3 /* Sources */,
 				B85F1B682869BF98007A3AB3 /* Frameworks */,
 				B85F1B692869BF98007A3AB3 /* Resources */,
+				104A614C505A2880D1B4FE28 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = NilGround;
-			packageProductDependencies = (
-				B8F27E902874484700AB126E /* FirebaseAnalytics */,
-				B8F27E922874484700AB126E /* FirebaseAuth */,
-				B8F27E942874484700AB126E /* FirebaseFirestore */,
-				B8F27E962874484700AB126E /* FirebaseFirestoreSwift */,
-			);
 			productName = NilGround;
 			productReference = B85F1B6B2869BF98007A3AB3 /* NilGround.app */;
 			productType = "com.apple.product-type.application";
@@ -296,9 +342,6 @@
 				Base,
 			);
 			mainGroup = B85F1B622869BF98007A3AB3;
-			packageReferences = (
-				B8F27E8F2874484700AB126E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-			);
 			productRefGroup = B85F1B6C2869BF98007A3AB3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -324,19 +367,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		104A614C505A2880D1B4FE28 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NilGround/Pods-NilGround-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NilGround/Pods-NilGround-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NilGround/Pods-NilGround-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73CBDB8C9133F78DD67776EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NilGround-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B85F1B672869BF98007A3AB3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B82EDC6E28758F9D00FCA14D /* MainThemeView.swift in Sources */,
+				B8584B8E287809C800669D68 /* MapViewModel.swift in Sources */,
+				B82EDC6E28758F9D00FCA14D /* ThemeView.swift in Sources */,
 				B8F27E6D28742EBD00AB126E /* ThemeCellViewModel.swift in Sources */,
 				B8F27E6828742A8400AB126E /* Stars.swift in Sources */,
+				B8584B892878064100669D68 /* TestView.swift in Sources */,
 				B83F6EA02875E0C5005035E2 /* AddTheme.swift in Sources */,
 				B8F27E6F2874314C00AB126E /* ThemeListViewModel.swift in Sources */,
 				B8AF4BE12872ACB100DF3E48 /* HexColor.swift in Sources */,
 				B80518AE2873229B00E984DA /* ThemeDetailView.swift in Sources */,
 				B8F27E6028741C8F00AB126E /* BlurView.swift in Sources */,
+				B8584B822877F4A600669D68 /* SpotCellViewModel.swift in Sources */,
+				B8584B842877F4B100669D68 /* SpotListViewModel.swift in Sources */,
+				B8584B8C2878084300669D68 /* ThemeMapView.swift in Sources */,
 				B8F27E6A28742A8800AB126E /* Likes.swift in Sources */,
 				B85F1B712869BF98007A3AB3 /* ContentView.swift in Sources */,
 				B8F27E852874478B00AB126E /* ThemeRepository.swift in Sources */,
@@ -344,6 +434,7 @@
 				B82EDC6A28751D3D00FCA14D /* MainThemeItem.swift in Sources */,
 				B85F1B812869C056007A3AB3 /* MainView.swift in Sources */,
 				B8F27E6228741D2900AB126E /* SpotCardItem.swift in Sources */,
+				B8584B862877F4E600669D68 /* SpotRepository.swift in Sources */,
 				B80518A52872D44300E984DA /* Theme.swift in Sources */,
 				B85F1B6F2869BF98007A3AB3 /* NilGroundApp.swift in Sources */,
 				B885771B28769D0500F84AF8 /* Category.swift in Sources */,
@@ -476,6 +567,7 @@
 		};
 		B85F1B7A2869BF99007A3AB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E292D06FC3A67919D063C62 /* Pods-NilGround.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -486,9 +578,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NilGround/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show it on the map.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -506,6 +598,7 @@
 		};
 		B85F1B7B2869BF99007A3AB3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69562D02E4785D0B08A0E2B4 /* Pods-NilGround.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -516,9 +609,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NilGround/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show it on the map.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -556,40 +649,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B8F27E8F2874484700AB126E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B8F27E902874484700AB126E /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B8F27E8F2874484700AB126E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		B8F27E922874484700AB126E /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B8F27E8F2874484700AB126E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		B8F27E942874484700AB126E /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B8F27E8F2874484700AB126E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		B8F27E962874484700AB126E /* FirebaseFirestoreSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B8F27E8F2874484700AB126E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestoreSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B85F1B632869BF98007A3AB3 /* Project object */;
 }

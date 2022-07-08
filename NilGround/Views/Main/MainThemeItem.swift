@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct MainThemeItem: View {
     let themeCellVM: ThemeCellViewModel
@@ -13,7 +14,7 @@ struct MainThemeItem: View {
     var body: some View {
         VStack {
             ZStack(alignment: .topLeading) {
-                Image("cafe")
+                WebImage(url: URL(string: themeCellVM.theme.image))
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 200)

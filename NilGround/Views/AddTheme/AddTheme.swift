@@ -10,6 +10,7 @@ import SwiftUI
 struct AddTheme: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var themeListVM = ThemeListViewModel()
     @State var isShowingPhotoPicker = false
     @State private var themeImage = UIImage(named: "empty")!
     @State private var title = ""
@@ -61,7 +62,7 @@ struct AddTheme: View {
                     }
                     Divider()
                     Button {
-                        
+                        addTheme()
                     } label: {
                         Text("등록")
                             .frame(maxWidth: .infinity)
@@ -77,6 +78,17 @@ struct AddTheme: View {
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
+    }
+    
+    func addTheme() {
+        themeListVM.uploadImage(image: themeImage) { path in
+            if let path = path {
+                let theme = Theme(title: title, description: description, image: path, category: category.name)
+                themeListVM.addTheme(theme: theme)
+                presentationMode.wrappedValue.dismiss()
+            }
+            presentationMode.wrappedValue.dismiss()
+        }
     }
     
     var preview: some View {

@@ -16,6 +16,10 @@ struct MainView: View {
     @Namespace var animation
     @State var detail = false
     
+    init() {
+        themeListVM.loadThemes()
+    }
+    
     var body: some View {
         
         ZStack {
@@ -58,7 +62,7 @@ struct MainView: View {
                         ForEach(themeListVM.themeCellViewModels) { themeCellVM in
                             ZStack {
                                 NavigationLink(tag: themeCellVM.id, selection: $isActive) {
-                                    MainThemeView(themeCellVM: themeCellVM)
+                                    ThemeView(themeCellVM: themeCellVM)
                                 } label: {
                                     Color.clear
                                 }

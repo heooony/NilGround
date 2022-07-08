@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import FirebaseFirestore
-import FirebaseFirestoreSwift
 
 struct Stars: Identifiable {
     let id = UUID().uuidString

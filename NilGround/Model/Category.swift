@@ -18,3 +18,4 @@ let categories = [
     Category(name: "Food", iconImagePath: "fork.knife"),
     Category(name: "Cafe", iconImagePath: "cup.and.saucer.fill")
 ]
+

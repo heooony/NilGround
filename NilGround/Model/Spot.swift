@@ -9,8 +9,8 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct Spot: Identifiable {
-    let id = UUID().uuidString
+struct Spot: Codable, Identifiable {
+    @DocumentID var id: String?
     let title: String
     let description: String
     let imagePath: String

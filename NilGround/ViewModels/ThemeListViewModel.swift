@@ -5,6 +5,7 @@
 //  Created by 김동헌 on 2022/07/05.
 //
 
+import SwiftUI
 import Foundation
 import Combine
 
@@ -25,8 +26,17 @@ class ThemeListViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func getTheme(id: String?) -> Theme {
-        let index = themeCellViewModels.firstIndex(where: {$0.id == id})!
-        return themeCellViewModels[index].theme
+    func loadThemes() {
+        themeRepository.loadThemes()
+    }
+    
+    func addTheme(theme: Theme) {
+        themeRepository.addTheme(theme)
+    }
+    
+    func uploadImage(image: UIImage, compleationHandler: @escaping (String?) -> Void) {
+        themeRepository.uploadImage(image: image) { path in
+            compleationHandler(path)
+        }
     }
 }

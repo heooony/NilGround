@@ -11,8 +11,6 @@ struct MainView: View {
     
     @ObservedObject var themeListVM = ThemeListViewModel()
     @State var isActive: String? = ""
-    @State var showCategory: Bool = true
-    @State var choiceCategory = categories.first!
     @Namespace var animation
     @State var detail = false
     
@@ -26,6 +24,8 @@ struct MainView: View {
             VStack(alignment: .leading) {
                 
                 HStack {
+                    Text("Nil-Ground")
+                        .font(.title)
                     Spacer()
                     Button {
                         
@@ -37,25 +37,6 @@ struct MainView: View {
                     }
                 }
                 .padding(.horizontal, c.defaultPadding)
-                
-                if showCategory {
-                    ScrollView(.horizontal) {
-                        HStack(alignment: .bottom, spacing: 20) {
-                            ForEach(categories) { category in
-                                Text(category.name)
-                                    .font(isSelected(category) ? .title.bold() : .title3)
-                                    .foregroundColor(isSelected(category) ? .primary : .secondary)
-                                    .onTapGesture {
-                                        withAnimation(.easeInOut) {
-                                            choiceCategory = category
-                                        }
-                                    }
-                            }
-                        }
-                        .padding(.horizontal, 20)
-                    }
-                    .padding(.bottom, 10)
-                }
                 
                 ScrollView {
                     VStack(spacing: 40) {
@@ -69,23 +50,6 @@ struct MainView: View {
                                 .disabled(true)
                                 
                                 MainThemeItem(themeCellVM: themeCellVM)
-                                    .gesture(
-                                        DragGesture().onChanged { value in
-                                            if value.translation.height > 0 {
-                                                withAnimation {
-                                                    showCategory = true
-                                                }
-                                            }
-                                            if value.translation.height < 0 {
-                                                withAnimation {
-                                                    showCategory = false
-                                                }
-                                            }
-                                        }
-                                    )
-                                    .onTapGesture {
-                                        isActive = themeCellVM.id
-                                    }
                             }
                         }
                     }
@@ -108,10 +72,6 @@ struct MainView: View {
             }
             .buttonStyle(PlainButtonStyle())
         }
-    }
-    
-    func isSelected(_ category: Category) -> Bool {
-        return choiceCategory == category
     }
     
     struct c {

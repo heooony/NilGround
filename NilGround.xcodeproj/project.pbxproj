@@ -29,6 +29,7 @@
 		B85F1B8F2869F1FC007A3AB3 /* NanumMyeongjo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B8D2869F1E5007A3AB3 /* NanumMyeongjo-ExtraBold.ttf */; };
 		B85F1B902869F1FF007A3AB3 /* NanumMyeongjo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B8E2869F1E5007A3AB3 /* NanumMyeongjo-Regular.ttf */; };
 		B85F1B912869F201007A3AB3 /* NanumMyeongjo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B8C2869F1E5007A3AB3 /* NanumMyeongjo-Bold.ttf */; };
+		B86AC791287AFC1D00DBC56B /* SecondTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86AC790287AFC1D00DBC56B /* SecondTestView.swift */; };
 		B885771B28769D0500F84AF8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B885771A28769D0500F84AF8 /* Category.swift */; };
 		B8A4768C2873F24500527F71 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A4768B2873F24500527F71 /* Spot.swift */; };
 		B8AF4BE12872ACB100DF3E48 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AF4BE02872ACB100DF3E48 /* HexColor.swift */; };
@@ -73,6 +74,7 @@
 		B85F1B8C2869F1E5007A3AB3 /* NanumMyeongjo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Bold.ttf"; sourceTree = "<group>"; };
 		B85F1B8D2869F1E5007A3AB3 /* NanumMyeongjo-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-ExtraBold.ttf"; sourceTree = "<group>"; };
 		B85F1B8E2869F1E5007A3AB3 /* NanumMyeongjo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Regular.ttf"; sourceTree = "<group>"; };
+		B86AC790287AFC1D00DBC56B /* SecondTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTestView.swift; sourceTree = "<group>"; };
 		B885771A28769D0500F84AF8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		B8A4768B2873F24500527F71 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		B8AF4BE02872ACB100DF3E48 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				B82EDC6D28758F9D00FCA14D /* ThemeView.swift */,
 				B8584B8B2878084300669D68 /* ThemeMapView.swift */,
 				B8584B882878064100669D68 /* TestView.swift */,
+				B86AC790287AFC1D00DBC56B /* SecondTestView.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				B8F27E6828742A8400AB126E /* Stars.swift in Sources */,
 				B8584B892878064100669D68 /* TestView.swift in Sources */,
 				B83F6EA02875E0C5005035E2 /* AddTheme.swift in Sources */,
+				B86AC791287AFC1D00DBC56B /* SecondTestView.swift in Sources */,
 				B8F27E6F2874314C00AB126E /* ThemeListViewModel.swift in Sources */,
 				B8AF4BE12872ACB100DF3E48 /* HexColor.swift in Sources */,
 				B80518AE2873229B00E984DA /* ThemeDetailView.swift in Sources */,

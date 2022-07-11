@@ -12,61 +12,78 @@ struct MainThemeItem: View {
     let themeCellVM: ThemeCellViewModel
     
     var body: some View {
-        VStack {
-            ZStack(alignment: .topLeading) {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Image("profile")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 40, height: 40)
+                    .clipShape(Circle())
+                
+                VStack(alignment: .leading) {
+                    Text("heo____ney")
+                        .font(.headline)
+                    
+                    Text("\(Date(timeIntervalSince1970: TimeInterval(themeCellVM.theme.createdDate!.seconds)).formatted())")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                }
+                
+                Spacer()
+                
+                Image(systemName: "ellipsis")
+                    .font(.title2)
+            }
+            
+            GeometryReader { proxy in
+                let size = proxy.size
+                
                 WebImage(url: URL(string: themeCellVM.theme.image))
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(height: 200)
-                    .contentShape(RoundedRectangle(cornerRadius: 0))
-                    .clipShape(CustomCorner(corners: [.topLeft, .topRight], radius: 30.0))
-                    .clipped()
+                    .frame(width: size.width, height: size.height)
+                    .cornerRadius(15)
                 
-                Image(systemName: "cup.and.saucer.fill")
-                    .resizable(resizingMode: .stretch)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 26.0, height: 26.0)
-                    .cornerRadius(10)
-                    .padding(10)
-                    .background(
-                        .thinMaterial, in: RoundedRectangle(
-                            cornerRadius: 16, style: .continuous
-                        )
-                    )
-                    .padding(15)
-            }
-            
-            VStack(alignment: .leading, spacing: 8.0) {
+                LinearGradient(colors: [
+                    .black.opacity(0.7),
+                    .black.opacity(0.5),
+                    .black.opacity(0.4),
+                    .clear,
+                    .black.opacity(0.3),
+                    .black.opacity(0.5),
+                ], startPoint: .top, endPoint: .bottom)
+                .cornerRadius(15)
+                
                 Text(themeCellVM.theme.title)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.7)], startPoint: .topLeading, endPoint: .bottomTrailing))
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
-                
-                Text("\(Date(timeIntervalSince1970: TimeInterval(themeCellVM.theme.createdDate!.seconds)))")
-                    .font(.footnote)
+                    .font(.title2)
                     .fontWeight(.semibold)
-                    .foregroundStyle(.secondary)
-                
-                Text(themeCellVM.theme.description)
-                    .font(.footnote)
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(2)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.white)
+                    .padding()
+                    .shadow(color: .black.opacity(0.4), radius: 5, x: 0, y: 0)
             }
-            .padding(.all, 20.0)
+            .frame(height: 200)
             
-            Spacer()
+            VStack(alignment: .leading, spacing: 10) {
+                StarsView(rating: 4.5)
+                
+                HStack {
+                    Text("\(themeCellVM.theme.spotCount) spot")
+                        .font(.callout)
+                        .fontWeight(.semibold)
+                    
+                    Text("\(themeCellVM.theme.hits) hits")
+                        .font(.callout)
+                        .fontWeight(.semibold)
+                }
+                .foregroundColor(.secondary)
+            }
+            
+            Text(themeCellVM.theme.description)
+                .font(.footnote)
+                .fontWeight(.semibold)
+                .lineLimit(3)
         }
-        .frame(height: 350.0)
-        .background(
-            RoundedRectangle(cornerRadius: 30.0, style: .continuous)
-                .foregroundColor(.white)
-                .shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: 10)
-        )
-        .padding(.horizontal, 20)
+        .padding()
     }
 }
 

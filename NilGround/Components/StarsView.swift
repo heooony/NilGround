@@ -38,19 +38,18 @@ struct StarsView: View {
             }
             Text("(\(formatRating))")
                 .font(.callout)
-                .foregroundColor(.white)
         }
     }
     
     private var fullStar: some View {
-        Image(systemName: "star.fill").foregroundColor(StarsView.COLOR)
+        Image(systemName: "star.fill").foregroundColor(StarsView.COLOR).font(.caption)
     }
     
     private var halfFullStar: some View {
-        Image(systemName: "star.lefthalf.fill").foregroundColor(StarsView.COLOR)
+        Image(systemName: "star.lefthalf.fill").foregroundColor(StarsView.COLOR).font(.caption)
     }
     
     private var emptyStar: some View {
-        Image(systemName: "star").foregroundColor(StarsView.COLOR)
+        Image(systemName: "star").foregroundColor(StarsView.COLOR).font(.caption)
     }
 }

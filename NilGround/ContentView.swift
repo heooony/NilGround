@@ -42,11 +42,10 @@ struct ContentView: View {
                             Spacer()
                             Image(systemName: tabBarImageNames[num])
                                 .font(.system(size: 18, weight: .bold))
-                                .foregroundColor(selectedIndex == num ? Color(.black) : .init(white: 0.8))
+                                .foregroundColor(selectedIndex == num ? .primary : .init(white: 0.8))
                             
                             Spacer()
                         }
-
                     }
                 }
             }

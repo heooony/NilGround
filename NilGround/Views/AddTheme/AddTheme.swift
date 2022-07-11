@@ -15,21 +15,12 @@ struct AddTheme: View {
     @State private var themeImage = UIImage(named: "empty")!
     @State private var title = ""
     @State private var description = ""
-    @State private var category = categories.first!
     
     var body: some View {
         NavigationView {
             VStack {
                 Form {
-                    Section(header: Text("카테고리 정보")) {
-                        Picker(category.name, selection: $category) {
-                            ForEach(categories) { category in
-                                Text(category.name)
-                                    .tag(category)
-                            }
-                        }
-                        .pickerStyle(.automatic)
-                    }
+                    
                     
                     Section(header: Text("케마 정보")) {
                         TextField("제목", text: $title)
@@ -62,7 +53,7 @@ struct AddTheme: View {
                     }
                     Divider()
                     Button {
-                        addTheme()
+                        
                     } label: {
                         Text("등록")
                             .frame(maxWidth: .infinity)
@@ -80,16 +71,7 @@ struct AddTheme: View {
         .navigationBarBackButtonHidden(true)
     }
     
-    func addTheme() {
-        themeListVM.uploadImage(image: themeImage) { path in
-            if let path = path {
-                let theme = Theme(title: title, description: description, image: path, category: category.name)
-                themeListVM.addTheme(theme: theme)
-                presentationMode.wrappedValue.dismiss()
-            }
-            presentationMode.wrappedValue.dismiss()
-        }
-    }
+    
     
     var preview: some View {
         VStack {
@@ -102,18 +84,7 @@ struct AddTheme: View {
                     .clipShape(CustomCorner(corners: [.topLeft, .topRight], radius: 30.0))
                     .clipped()
                 
-                Image(systemName: category.iconImagePath)
-                    .resizable(resizingMode: .stretch)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 26.0, height: 26.0)
-                    .cornerRadius(10)
-                    .padding(10)
-                    .background(
-                        .thinMaterial, in: RoundedRectangle(
-                            cornerRadius: 16, style: .continuous
-                        )
-                    )
-                    .padding(15)
+                
             }
             
             VStack(alignment: .leading, spacing: 8.0) {

@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     
     @ObservedObject var themeListVM = ThemeListViewModel()
+    @Environment(\.colorScheme) var colorScheme
     @State var isActive: String? = ""
     @Namespace var animation
     @State var detail = false
@@ -24,59 +25,62 @@ struct MainView: View {
             VStack(alignment: .leading) {
                 
                 HStack {
-                    Text("Nil-Ground")
-                        .font(.title)
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "magnifyingglass")
+                            .resizable()
+                            .renderingMode(.template)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: c.iconSize, height: c.iconSize)
+                            .shadow(radius: 1)
+                    }
                     Spacer()
                     Button {
                         
                     } label: {
-                        Image(systemName: "gearshape")
+                        Image(systemName: "plus.viewfinder")
                             .resizable()
+                            .renderingMode(.template)
+                            .aspectRatio(contentMode: .fit)
                             .frame(width: c.iconSize, height: c.iconSize)
-                            .foregroundColor(Color(0x444444))
+                            .shadow(radius: 1)
                     }
                 }
-                .padding(.horizontal, c.defaultPadding)
+                .overlay(
+                    Text("Nil-Ground")
+                        .font(.title2)
+                )
+                .padding(c.defaultPadding)
                 
                 ScrollView {
                     VStack(spacing: 40) {
                         ForEach(themeListVM.themeCellViewModels) { themeCellVM in
                             ZStack {
                                 NavigationLink(tag: themeCellVM.id, selection: $isActive) {
-                                    ThemeView(themeCellVM: themeCellVM)
+                                    ThemeView()
                                 } label: {
                                     Color.clear
                                 }
                                 .disabled(true)
-                                
                                 MainThemeItem(themeCellVM: themeCellVM)
+                                    .onTapGesture {
+                                        isActive = themeCellVM.id
+                                    }
                             }
                         }
                     }
-                    
                 }
             }
-            NavigationLink {
-                AddTheme()
-            } label: {
-                Image(systemName: "plus")
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .padding(20)
-                    .background(
-                        Circle()
-                            .foregroundColor(Color(0xFF6666))
-                    )
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-                    .padding(20)
-            }
-            .buttonStyle(PlainButtonStyle())
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .foregroundColor(.primary)
+            .preferredColorScheme(.dark)
         }
     }
     
     struct c {
         static let defaultPadding: CGFloat = 20.0
-        static let iconSize: CGFloat = 30.0
+        static let iconSize: CGFloat = 20.0
     }
 }
 

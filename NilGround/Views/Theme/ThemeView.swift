@@ -10,82 +10,94 @@ import SDWebImageSwiftUI
 
 struct ThemeView: View {
     
-    let themeCellVM: ThemeCellViewModel
+//    let themeCellVM: ThemeCellViewModel
     @Environment(\.presentationMode) var presentationMode
+    let width = UIScreen.main.bounds.width
     
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            WebImage(url: URL(string: themeCellVM.theme.image))
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: UIScreen.main.bounds.width)
-            
-            LinearGradient(colors: [
-                .black.opacity(0.4),
-                .black.opacity(0.2),
-                .clear,
-                .black.opacity(0.3),
-                .black.opacity(0.6),
-            ], startPoint: .top, endPoint: .bottom)
-            
-            VStack(alignment: .leading, spacing: 8.0) {
-                Spacer()
-                Image(systemName: "cup.and.saucer.fill")
-                    .resizable(resizingMode: .stretch)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 26.0, height: 26.0)
-                    .cornerRadius(10)
-                    .padding(10)
-                    .background(
-                        .thinMaterial, in: RoundedRectangle(
-                            cornerRadius: 16, style: .continuous
-                        )
-                    )
-                    .padding(.bottom, 20)
+        ScrollView {
+            VStack(spacing: 30) {
+                GeometryReader { proxy in
+                    let size = proxy.size
+                    
+    //                WebImage(url: URL(string: themeCellVM.theme.image))
+                    Image("profile-1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: size.width, height: size.height)
+                        .cornerRadius(15)
+                    
+                    LinearGradient(colors: [
+                        .black.opacity(0.7),
+                        .black.opacity(0.5),
+                        .black.opacity(0.4),
+                        .clear,
+                        .black.opacity(0.3),
+                        .black.opacity(0.5),
+                    ], startPoint: .top, endPoint: .bottom)
+                    .cornerRadius(15)
+                }
+                .frame(height: 350)
                 
-                Text(themeCellVM.theme.title)
+                Text("성남의 태양 아래 피톤치드를 느낄 수 있는 12곳")
                     .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundStyle(.white)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
-                
-                Text("\(Date(timeIntervalSince1970: TimeInterval(themeCellVM.theme.createdDate!.seconds)))")
-                    .font(.footnote)
                     .fontWeight(.semibold)
-                    .foregroundStyle(.white)
+                    .foregroundColor(.primary)
+                    .padding(.horizontal, 10)
                 
-                Text(themeCellVM.theme.description)
-                    .font(.footnote)
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(2)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundColor(.white)
-                    .padding(.bottom, 20)
+                Divider()
+                    .padding(.horizontal, 20)
+                    
+                Text("성남에는 유명한 탄천이 있습니다. 탄천에서 즐길 수 있는 식물 정원과 바람이 잘 드는 곳으로 선정해보았습니다. 오리역 탄천부터 복정 탄천에 이르기 전 범위로 정해보았습니다.")
+                    .font(.callout)
+                    .foregroundColor(.primary)
+                    .padding(.horizontal)
+                
+                Color.clear.frame(height: 50)
+                
+                ForEach(1..<7, id: \.self) { index in
+                    VStack(alignment: .leading) {
+                        Image("post\(index)")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: width, height: 200)
+                            .clipped()
+                        
+                        Text("성남의 태양 아래 피톤치드를 느낄 수 있는 12곳")
+                            .font(.title.bold())
+                            .foregroundColor(.primary)
+                            .padding(.horizontal)
+                            .padding(.vertical, 5)
+                        
+                        HStack {
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text("\(Date.now.formatted())")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                                Text("1252 likes")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                        .padding(.horizontal)
+                        
+                        Text("성남에는 유명한 탄천이 있습니다. 탄천에서 즐길 수 있는 식물 정원과 바람이 잘 드는 곳으로 선정해보았습니다. 오리역 탄천부터 복정 탄천에 이르기 전 범위로 정해보았습니다.")
+                            .font(.callout)
+                            .foregroundColor(.primary)
+                            .padding()
+                    }
+                }
             }
-            .padding(.all, 20.0)
-            .padding(.bottom, 40)
-            
-            Button {
-                presentationMode.wrappedValue.dismiss()
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.body.weight(.bold))
-                    .foregroundColor(.secondary)
-                    .padding(8)
-                    .background(.ultraThinMaterial, in: Circle())
-            }
-            .padding(30)
-            .padding(.top, 25)
         }
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
+        .preferredColorScheme(.dark)
     }
 }
 
 struct ThemeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ThemeView()
     }
 }

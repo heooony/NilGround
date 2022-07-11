@@ -7,5 +7,10 @@
 		<string>NanumMyeongjo-Regular.ttf</string>
 		<string>NanumMyeongjo-Bold.ttf</string>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string></string>
+	</dict>
 </dict>
 </plist>

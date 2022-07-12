@@ -14,6 +14,7 @@ struct MainView: View {
     @State var isActive: String? = ""
     @Namespace var animation
     @State var detail = false
+    @State var autoInTheme = false
     
     init() {
         themeListVM.loadThemes()
@@ -37,7 +38,7 @@ struct MainView: View {
                     }
                     Spacer()
                     Button {
-                        
+//                        AddTheme(success: $autoInTheme)
                     } label: {
                         Image(systemName: "plus.viewfinder")
                             .resizable()

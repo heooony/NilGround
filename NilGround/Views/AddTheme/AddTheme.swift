@@ -15,31 +15,25 @@ struct AddTheme: View {
     @State private var themeImage = UIImage(named: "empty")!
     @State private var title = ""
     @State private var description = ""
+    @State private var showingAlert = false
     
     var body: some View {
         NavigationView {
             VStack {
                 Form {
-                    
-                    
-                    Section(header: Text("케마 정보")) {
+                    Section(header: Text("테마 정보")) {
                         TextField("제목", text: $title)
                         TextField("설명", text: $description)
-                    }
-                    
-                    Section(header: Text("사진 정보")) {
                         Button {
                             isShowingPhotoPicker = true
                         } label: {
                             Text("이미지 선택하기")
                         }
-
                     }
                     
                     Section(header: Text("Preview")) {
                         preview
-                            .padding(.horizontal, -10)
-                            .padding(.all, 20)
+                            .padding(0)
                     }
                 }
                 
@@ -53,10 +47,21 @@ struct AddTheme: View {
                     }
                     Divider()
                     Button {
+                        themeListVM.uploadImage(image: themeImage) { path in
+                            if let path = path {
+                                let theme = Theme(title: title, description: description, image: path)
+                                themeListVM.addTheme(theme: theme)
+                                NavigationLink("goToTheme", destination: ThemeView())
+                            }
+                        }
+                        self.showingAlert = true
                         
                     } label: {
                         Text("등록")
                             .frame(maxWidth: .infinity)
+                    }
+                    .alert(isPresented: $showingAlert) {
+                        Alert(title: Text("Error!"), message: Text("예기치 못한 이유로 업로드가 되지 않았습니다."), dismissButton: .default(Text("Dismiss")))
                     }
                 }
                 .frame(height: 30)
@@ -69,55 +74,62 @@ struct AddTheme: View {
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
+        .preferredColorScheme(.dark)
     }
     
     
     
     var preview: some View {
-        VStack {
-            ZStack(alignment: .topLeading) {
+        VStack(alignment: .leading, spacing: 12) {
+            GeometryReader { proxy in
+                let size = proxy.size
+                
                 Image(uiImage: themeImage)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(height: 200)
-                    .contentShape(RoundedRectangle(cornerRadius: 0))
-                    .clipShape(CustomCorner(corners: [.topLeft, .topRight], radius: 30.0))
-                    .clipped()
+                    .frame(width: size.width, height: size.height)
+                    .cornerRadius(15)
                 
+                LinearGradient(colors: [
+                    .black.opacity(0.7),
+                    .black.opacity(0.5),
+                    .black.opacity(0.4),
+                    .clear,
+                    .black.opacity(0.3),
+                    .black.opacity(0.5),
+                ], startPoint: .top, endPoint: .bottom)
+                .cornerRadius(15)
                 
-            }
-            
-            VStack(alignment: .leading, spacing: 8.0) {
-                Text(title.isEmpty ? "제목을 입력하세요" : title)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.7)], startPoint: .topLeading, endPoint: .bottomTrailing))
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
-                
-                Text("\(Date.now)")
-                    .font(.footnote)
+                Text(title)
+                    .font(.title2)
                     .fontWeight(.semibold)
-                    .lineLimit(1)
-                    .foregroundStyle(.secondary)
-                
-                Text(description.isEmpty ? "설명을 입력하세요" : description)
-                    .font(.footnote)
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(2)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.white)
+                    .padding()
+                    .shadow(color: .black.opacity(0.4), radius: 5, x: 0, y: 0)
             }
-            .padding(.all, 20.0)
+            .frame(height: 200)
             
-            Spacer()
+            VStack(alignment: .leading, spacing: 10) {
+                StarsView(rating: 0)
+                
+                HStack {
+                    Text("0 spot")
+                        .font(.callout)
+                        .fontWeight(.semibold)
+                    
+                    Text("0 hits")
+                        .font(.callout)
+                        .fontWeight(.semibold)
+                }
+                .foregroundColor(.secondary)
+            }
+            
+            Text(description)
+                .font(.footnote)
+                .fontWeight(.semibold)
+                .lineLimit(3)
         }
-        .frame(height: 350.0)
-        .background(
-            RoundedRectangle(cornerRadius: 30.0, style: .continuous)
-                .foregroundColor(.white)
-                .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 10)
-        )
+        .padding()
     }
 }
 

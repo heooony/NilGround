@@ -21,21 +21,52 @@ struct ThemeView: View {
                     let size = proxy.size
                     
     //                WebImage(url: URL(string: themeCellVM.theme.image))
-                    Image("profile-1")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: size.width, height: size.height)
+                    ZStack(alignment: .topTrailing) {
+                        Image("profile-1")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: size.width, height: size.height)
+                            .cornerRadius(15)
+                        
+                        LinearGradient(colors: [
+                            .black.opacity(0.4),
+                            .black.opacity(0.3),
+                            .black.opacity(0.1),
+                            .clear,
+                            .black.opacity(0.2),
+                            .black.opacity(0.3),
+                        ], startPoint: .top, endPoint: .bottom)
                         .cornerRadius(15)
-                    
-                    LinearGradient(colors: [
-                        .black.opacity(0.7),
-                        .black.opacity(0.5),
-                        .black.opacity(0.4),
-                        .clear,
-                        .black.opacity(0.3),
-                        .black.opacity(0.5),
-                    ], startPoint: .top, endPoint: .bottom)
-                    .cornerRadius(15)
+                        
+                        HStack(spacing: 20) {
+                            Button {
+                                presentationMode.wrappedValue.dismiss()
+                            } label: {
+                                Image(systemName: "arrow.left")
+                                    .font(.title)
+                            }
+                            
+                            Spacer()
+                            
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "plus")
+                                    .font(.title)
+                            }
+
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "gearshape.fill")
+                                    .font(.title)
+                            }
+                        }
+                        .foregroundColor(.white)
+                        .shadow(radius: 5)
+                        .padding(.top, getSafeAreaTop())
+                        .padding()
+                    }
                 }
                 .frame(height: 350)
                 
@@ -47,6 +78,7 @@ struct ThemeView: View {
                 
                 Divider()
                     .padding(.horizontal, 20)
+                    .foregroundColor(.secondary)
                     
                 Text("성남에는 유명한 탄천이 있습니다. 탄천에서 즐길 수 있는 식물 정원과 바람이 잘 드는 곳으로 선정해보았습니다. 오리역 탄천부터 복정 탄천에 이르기 전 범위로 정해보았습니다.")
                     .font(.callout)
@@ -93,6 +125,16 @@ struct ThemeView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
         .preferredColorScheme(.dark)
+    }
+    
+    func getSafeAreaTop() -> CGFloat {
+        let keyWindow = UIApplication.shared.connectedScenes
+            .filter({$0.activationState == .foregroundActive})
+            .map({$0 as? UIWindowScene})
+            .compactMap({$0})
+            .first?.windows
+            .filter({$0.isKeyWindow}).first
+        return (keyWindow?.safeAreaInsets.top)!
     }
 }
 

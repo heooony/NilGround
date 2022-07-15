@@ -13,6 +13,7 @@ struct ThemeView: View {
 //    let themeCellVM: ThemeCellViewModel
     @Environment(\.presentationMode) var presentationMode
     let width = UIScreen.main.bounds.width
+    @Binding var root: Bool
     
     var body: some View {
         ScrollView {
@@ -40,6 +41,7 @@ struct ThemeView: View {
                         
                         HStack(spacing: 20) {
                             Button {
+                                root = false
                                 presentationMode.wrappedValue.dismiss()
                             } label: {
                                 Image(systemName: "arrow.left")
@@ -140,6 +142,6 @@ struct ThemeView: View {
 
 struct ThemeView_Previews: PreviewProvider {
     static var previews: some View {
-        ThemeView()
+        ThemeView(root: .constant(true))
     }
 }

@@ -35,9 +35,11 @@ class ThemeRepository: ObservableObject {
         }
     }
     
-    func addTheme(_ theme: Theme) {
+    func addTheme(_ theme: Theme, compleationHandler: @escaping () -> Void) {
         do {
-            let _ = try db.collection("themes").addDocument(from: theme)
+            let _ = try db.collection("themes").addDocument(from: theme) { _ in
+                compleationHandler()
+            }
         } catch {
             fatalError("Unable to encode theme: \(error.localizedDescription)")
         }

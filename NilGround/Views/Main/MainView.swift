@@ -15,6 +15,7 @@ struct MainView: View {
     @Namespace var animation
     @State var detail = false
     @State var autoInTheme = false
+    @State var root: Bool = false
     
     init() {
         themeListVM.loadThemes()
@@ -37,8 +38,8 @@ struct MainView: View {
                             .shadow(radius: 1)
                     }
                     Spacer()
-                    Button {
-//                        AddTheme(success: $autoInTheme)
+                    NavigationLink(isActive: $root) {
+                        AddTheme(root: $root)
                     } label: {
                         Image(systemName: "plus.viewfinder")
                             .resizable()
@@ -46,6 +47,9 @@ struct MainView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: c.iconSize, height: c.iconSize)
                             .shadow(radius: 1)
+                            .onTapGesture {
+                                root = true
+                            }
                     }
                 }
                 .overlay(
@@ -59,7 +63,7 @@ struct MainView: View {
                         ForEach(themeListVM.themeCellViewModels) { themeCellVM in
                             ZStack {
                                 NavigationLink(tag: themeCellVM.id, selection: $isActive) {
-                                    ThemeView()
+                                    ThemeView(root: $root)
                                 } label: {
                                     Color.clear
                                 }

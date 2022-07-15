@@ -16,6 +16,10 @@ struct AddTheme: View {
     @State private var title = ""
     @State private var description = ""
     @State private var showingAlert = false
+    @State private var isActive: String?
+    @State private var id: String = "go"
+    
+    @Binding var root: Bool
     
     var body: some View {
         NavigationView {
@@ -48,18 +52,27 @@ struct AddTheme: View {
                     Divider()
                     Button {
                         themeListVM.uploadImage(image: themeImage) { path in
+                        isActive = ""
                             if let path = path {
                                 let theme = Theme(title: title, description: description, image: path)
-                                themeListVM.addTheme(theme: theme)
-                                NavigationLink("goToTheme", destination: ThemeView())
+                                themeListVM.addTheme(theme: theme) {
+                                    isActive = "go"
+                                }
+                            } else {
+                                self.showingAlert = true
                             }
                         }
-                        self.showingAlert = true
-                        
                     } label: {
                         Text("등록")
                             .frame(maxWidth: .infinity)
                     }
+                    .background(
+                        NavigationLink(tag: id, selection: $isActive) {
+                            ThemeView(root: $root)
+                        } label: {
+                            EmptyView()
+                        }
+                    )
                     .alert(isPresented: $showingAlert) {
                         Alert(title: Text("Error!"), message: Text("예기치 못한 이유로 업로드가 되지 않았습니다."), dismissButton: .default(Text("Dismiss")))
                     }
@@ -135,6 +148,6 @@ struct AddTheme: View {
 
 struct AddTheme_Previews: PreviewProvider {
     static var previews: some View {
-        AddTheme()
+        AddTheme(root: .constant(true))
     }
 }

@@ -24,7 +24,7 @@ struct MainThemeItem: View {
                     Text("heo____ney")
                         .font(.headline)
                     
-                    Text("\(Date(timeIntervalSince1970: TimeInterval(themeCellVM.theme.createdDate!.seconds)).formatted())")
+                    Text("")
                         .font(.footnote)
                         .foregroundColor(.secondary)
                 }

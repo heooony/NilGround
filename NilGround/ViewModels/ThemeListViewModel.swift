@@ -30,8 +30,10 @@ class ThemeListViewModel: ObservableObject {
         themeRepository.loadThemes()
     }
     
-    func addTheme(theme: Theme) {
-        themeRepository.addTheme(theme)
+    func addTheme(theme: Theme, compleationHandler: @escaping () -> Void) {
+        themeRepository.addTheme(theme) {
+            compleationHandler()
+        }
     }
     
     func uploadImage(image: UIImage, compleationHandler: @escaping (String?) -> Void) {

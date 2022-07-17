@@ -35,6 +35,15 @@ class ThemeRepository: ObservableObject {
         }
     }
     
+    func getTheme(_ id: String, compleationHandler: @escaping (Theme) -> Void) {
+        db.collection("themes").document(id).getDocument(as: Theme.self) { result in
+            switch result {
+               case .success(let exist): compleationHandler(exist)
+               case .failure(let error): print(error)
+            }
+        }
+    }
+    
     func addTheme(_ theme: Theme, compleationHandler: @escaping () -> Void) {
         do {
             let _ = try db.collection("themes").addDocument(from: theme) { _ in

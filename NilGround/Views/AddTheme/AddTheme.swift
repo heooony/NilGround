@@ -10,7 +10,7 @@ import SwiftUI
 struct AddTheme: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var themeListVM = ThemeListViewModel()
+    @ObservedObject var themesVM = ThemesViewModel()
     @State var isShowingPhotoPicker = false
     @State private var themeImage = UIImage(named: "empty")!
     @State private var title = ""
@@ -51,11 +51,11 @@ struct AddTheme: View {
                     }
                     Divider()
                     Button {
-                        themeListVM.uploadImage(image: themeImage) { path in
+                        themesVM.uploadImage(image: themeImage) { path in
                         isActive = ""
                             if let path = path {
                                 let theme = Theme(title: title, description: description, image: path)
-                                themeListVM.addTheme(theme: theme) {
+                                themesVM.addTheme(theme: theme) {
                                     isActive = "go"
                                 }
                             } else {
@@ -68,7 +68,7 @@ struct AddTheme: View {
                     }
                     .background(
                         NavigationLink(tag: id, selection: $isActive) {
-                            ThemeView(root: $root)
+//                            ThemeView(root: $root, id: theme.id)
                         } label: {
                             EmptyView()
                         }

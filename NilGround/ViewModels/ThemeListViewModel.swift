@@ -30,6 +30,11 @@ class ThemeListViewModel: ObservableObject {
         themeRepository.loadThemes()
     }
     
+    func getTheme(id: String) -> Theme {
+        if let theme = themeRepository.getTheme(id) { return theme }
+        else { return Theme(title: "없음", description: "없음", image: "없음") } 
+    }
+    
     func addTheme(theme: Theme, compleationHandler: @escaping () -> Void) {
         themeRepository.addTheme(theme) {
             compleationHandler()

@@ -10,24 +10,31 @@ import SDWebImageSwiftUI
 
 struct ThemeView: View {
     
-//    let themeCellVM: ThemeCellViewModel
     @Environment(\.presentationMode) var presentationMode
     @State var titleOffset = CGFloat.zero
+    @State var contentOpacity: CGFloat = 1.0
+    private let appbarHeight: CGFloat = 600.0
+    @ObservedObject var themesVM = ThemesViewModel()
     let width = UIScreen.main.bounds.width
     @Binding var root: Bool
     
+    init(root: Binding<Bool>, id: String) async {
+        self._root = root
+        await themesVM.getTheme(id: id)
+    }
+    
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 30) {
                 GeometryReader { proxy in
                     let size = proxy.size
                     
-    //                WebImage(url: URL(string: themeCellVM.theme.image))
                     ZStack(alignment: .topTrailing) {
-                        Image("profile-1")
+                        WebImage(url: URL(string: themesVM.theme!.image))
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: size.width, height: UIScreen.main.bounds.height)
+                            .cornerRadius(15)
                         
                         LinearGradient(colors: [
                             .black.opacity(0.7),
@@ -57,7 +64,7 @@ struct ThemeView: View {
                                 Image(systemName: "plus")
                                     .font(.title)
                             }
-
+                            
                             Button {
                                 
                             } label: {
@@ -69,35 +76,38 @@ struct ThemeView: View {
                         .shadow(radius: 5)
                         .padding(.top, getSafeAreaTop())
                         .padding()
+                        .offset(y: -titleOffset)
+                        .offset(y: titleOffset > 0 ? titleOffset : (-titleOffset < appbarHeight ? 0 : titleOffset + appbarHeight))
                         
-                        VStack(alignment: .leading, spacing: 10) {
+                        VStack(alignment: .leading, spacing: 15) {
                             Spacer()
                             
-                            Text("\(titleOffset)")
+                            VStack(alignment: .leading, spacing: 10) {
+                                
+                                Text("\(Date.now.formatted())")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                                
+                                Text("성남에는 유명한 탄천이 있습니다. 탄천에서 즐길 수 있는 식물 정원과 바람이 잘 드는 곳으로 선정해보았습니다. 오리역 탄천부터 복정 탄천에 이르기 전 범위로 정해보았습니다.")
+                                    .font(.callout)
+                                    .foregroundColor(.primary)
+                                
+                            }
+                            .opacity(getOpacity(titleOffset))
                             
                             Text("성남의 태양 아래 피톤치드를 느낄 수 있는 12곳")
                                 .font(.title)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.primary)
                             
-                            Divider()
-                                .padding(.horizontal, 20)
-                                .foregroundColor(.secondary)
-                            
-                            Text("\(Date.now.formatted())")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                            
-                            Text("성남에는 유명한 탄천이 있습니다. 탄천에서 즐길 수 있는 식물 정원과 바람이 잘 드는 곳으로 선정해보았습니다. 오리역 탄천부터 복정 탄천에 이르기 전 범위로 정해보았습니다.")
-                                .font(.callout)
-                                .foregroundColor(.primary)
                         }
                         .padding(.horizontal, 30)
                         .padding(.bottom, 40)
                     }
                 }
-                // MARK: 여기서부터 수정하기
+                .zIndex(1)
                 .offset(y: -titleOffset)
+                .offset(y: titleOffset > 0 ? 0 : (-titleOffset < appbarHeight ? titleOffset : -appbarHeight))
                 .frame(height: UIScreen.main.bounds.height)
                 .background(
                     GeometryReader { proxy in
@@ -143,6 +153,7 @@ struct ThemeView: View {
                             .padding()
                     }
                 }
+                .zIndex(0)
             }
         }
         .ignoresSafeArea()
@@ -160,6 +171,10 @@ struct ThemeView: View {
             .filter({$0.isKeyWindow}).first
         return (keyWindow?.safeAreaInsets.top)!
     }
+    
+    func getOpacity(_ offset: CGFloat) -> CGFloat {
+        1 + offset / appbarHeight
+    }
 }
 
 struct TitleOffsetKey: PreferenceKey {
@@ -169,8 +184,8 @@ struct TitleOffsetKey: PreferenceKey {
     }
 }
 
-struct ThemeView_Previews: PreviewProvider {
-    static var previews: some View {
-        ThemeView(root: .constant(true))
-    }
-}
+//struct ThemeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ThemeView((root: .constant(true)))
+//    }
+//}

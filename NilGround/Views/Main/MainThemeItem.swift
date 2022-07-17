@@ -9,7 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct MainThemeItem: View {
-    let themeCellVM: ThemeCellViewModel
+    let theme: Theme
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -38,7 +38,7 @@ struct MainThemeItem: View {
             GeometryReader { proxy in
                 let size = proxy.size
                 
-                WebImage(url: URL(string: themeCellVM.theme.image))
+                WebImage(url: URL(string: theme.image))
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: size.width, height: size.height)
@@ -54,7 +54,7 @@ struct MainThemeItem: View {
                 ], startPoint: .top, endPoint: .bottom)
                 .cornerRadius(15)
                 
-                Text(themeCellVM.theme.title)
+                Text(theme.title)
                     .font(.title2)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
@@ -67,18 +67,18 @@ struct MainThemeItem: View {
                 StarsView(rating: 4.5)
                 
                 HStack {
-                    Text("\(themeCellVM.theme.spotCount) spot")
+                    Text("\(theme.spotCount) spot")
                         .font(.callout)
                         .fontWeight(.semibold)
                     
-                    Text("\(themeCellVM.theme.hits) hits")
+                    Text("\(theme.hits) hits")
                         .font(.callout)
                         .fontWeight(.semibold)
                 }
                 .foregroundColor(.secondary)
             }
             
-            Text(themeCellVM.theme.description)
+            Text(theme.description)
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .lineLimit(3)
@@ -88,7 +88,6 @@ struct MainThemeItem: View {
 }
 
 struct MainThemeItem_Previews: PreviewProvider {
-    @ObservedObject var themeListVM = ThemeListViewModel()
     static var previews: some View {
         MainView()
     }

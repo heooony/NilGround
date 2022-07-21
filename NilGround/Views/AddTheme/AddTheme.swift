@@ -6,20 +6,24 @@
 //
 
 import SwiftUI
+import Combine
 
 struct AddTheme: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var themesVM = ThemesViewModel()
+    @ObservedObject var themesVM = ThemeListViewModel()
     @State var isShowingPhotoPicker = false
     @State private var themeImage = UIImage(named: "empty")!
     @State private var title = ""
     @State private var description = ""
     @State private var showingAlert = false
     @State private var isActive: String?
-    @State private var id: String = "go"
-    
+    @State private var go: String = "go"
+    @State private var id: String = ""
     @Binding var root: Bool
+    
+    let maxTitleLength = Int(25)
+    let maxDescriptionLength = Int(100)
     
     var body: some View {
         NavigationView {
@@ -27,7 +31,17 @@ struct AddTheme: View {
                 Form {
                     Section(header: Text("테마 정보")) {
                         TextField("제목", text: $title)
+                            .onReceive(Just(title), perform: { _ in
+                                if maxTitleLength < title.count {
+                                    title = String(title.prefix(maxTitleLength))
+                                }
+                            })
                         TextField("설명", text: $description)
+                            .onReceive(Just(description), perform: { _ in
+                                if maxDescriptionLength < description.count {
+                                    description = String(description.prefix(maxDescriptionLength))
+                                }
+                            })
                         Button {
                             isShowingPhotoPicker = true
                         } label: {
@@ -51,24 +65,14 @@ struct AddTheme: View {
                     }
                     Divider()
                     Button {
-                        themesVM.uploadImage(image: themeImage) { path in
-                        isActive = ""
-                            if let path = path {
-                                let theme = Theme(title: title, description: description, image: path)
-                                themesVM.addTheme(theme: theme) {
-                                    isActive = "go"
-                                }
-                            } else {
-                                self.showingAlert = true
-                            }
-                        }
+                        uploadTheme()
                     } label: {
                         Text("등록")
                             .frame(maxWidth: .infinity)
                     }
                     .background(
-                        NavigationLink(tag: id, selection: $isActive) {
-//                            ThemeView(root: $root, id: theme.id)
+                        NavigationLink(tag: go, selection: $isActive) {
+                            ThemeView(root: $root, id: id)
                         } label: {
                             EmptyView()
                         }
@@ -90,7 +94,20 @@ struct AddTheme: View {
         .preferredColorScheme(.dark)
     }
     
-    
+    func uploadTheme() {
+        themesVM.uploadImage(image: themeImage) { path in
+        isActive = ""
+            if let path = path {
+                let theme = Theme(title: title, description: description, image: path)
+                themesVM.addTheme(theme: theme) { id in
+                    self.id = id
+                    isActive = "go"
+                }
+            } else {
+                self.showingAlert = true
+            }
+        }
+    }
     
     var preview: some View {
         VStack(alignment: .leading, spacing: 12) {

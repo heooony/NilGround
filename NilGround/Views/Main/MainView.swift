@@ -9,17 +9,12 @@ import SwiftUI
 
 struct MainView: View {
     
-    @ObservedObject var themesViewModel = ThemesViewModel()
+    @StateObject var themesData = ThemeListViewModel()
     @Environment(\.colorScheme) var colorScheme
     @State var isActive: String? = ""
-    @Namespace var animation
     @State var detail = false
     @State var autoInTheme = false
     @State var root: Bool = false
-    
-    init() {
-        themesViewModel.loadThemes()
-    }
     
     var body: some View {
         
@@ -60,17 +55,17 @@ struct MainView: View {
                 
                 ScrollView {
                     VStack(spacing: 40) {
-                        ForEach(themesViewModel.themes) { theme in
+                        ForEach(themesData.themeCellViewModels) { themeVM in
                             ZStack {
-                                NavigationLink(tag: theme.id, selection: $isActive) {
-                                    ThemeView(root: $root, id: theme.id)
+                                NavigationLink(tag: themeVM.id, selection: $isActive) {
+                                    ThemeView(root: $root, id: themeVM.id)
                                 } label: {
                                     Color.clear
                                 }
                                 .disabled(true)
-                                MainThemeItem(theme: theme)
+                                MainThemeItem(theme: themeVM.theme)
                                     .onTapGesture {
-                                        isActive = theme.id
+                                        isActive = themeVM.id
                                     }
                             }
                         }
@@ -80,6 +75,9 @@ struct MainView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .foregroundColor(.primary)
             .preferredColorScheme(.dark)
+            .onAppear {
+                themesData.fetchData()
+            }
         }
     }
     

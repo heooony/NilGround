@@ -17,7 +17,7 @@ class ThemeRepository: ObservableObject {
     
     @Published var themes = [Theme]()
     
-    func loadThemes() {
+    func fetchData() {
         db.collection("themes").addSnapshotListener { querySnapshot, err in
             if let querySnapshot = querySnapshot {
                 self.themes = querySnapshot.documents.compactMap { document in
@@ -30,7 +30,6 @@ class ThemeRepository: ObservableObject {
                     }
                     return nil
                 }
-                print("DEBUG: \(self.themes)")
             }
         }
     }
@@ -44,11 +43,12 @@ class ThemeRepository: ObservableObject {
         }
     }
     
-    func addTheme(_ theme: Theme, compleationHandler: @escaping () -> Void) {
+    func addTheme(_ theme: Theme, compleationHandler: @escaping (String) -> Void) {
         do {
-            let _ = try db.collection("themes").addDocument(from: theme) { _ in
-                compleationHandler()
+            let x = try db.collection("themes").addDocument(from: theme) { _ in
+                
             }
+            compleationHandler(x.documentID)
         } catch {
             fatalError("Unable to encode theme: \(error.localizedDescription)")
         }

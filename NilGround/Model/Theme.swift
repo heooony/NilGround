@@ -28,4 +28,16 @@ struct Theme: Codable, Identifiable {
         self.spotCount = 0
         self.hits = 0
     }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case description
+        case image
+        case stars
+        case spotCount
+        case hits
+        case createdDate
+    }
+
 }

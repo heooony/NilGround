@@ -20,7 +20,6 @@ struct AddTheme: View {
     @State private var isActive: String?
     @State private var go: String = "go"
     @State private var id: String = ""
-    @Binding var root: Bool
     
     let maxTitleLength = Int(25)
     let maxDescriptionLength = Int(100)
@@ -70,13 +69,6 @@ struct AddTheme: View {
                         Text("등록")
                             .frame(maxWidth: .infinity)
                     }
-                    .background(
-                        NavigationLink(tag: go, selection: $isActive) {
-                            ThemeView(root: $root, id: id)
-                        } label: {
-                            EmptyView()
-                        }
-                    )
                     .alert(isPresented: $showingAlert) {
                         Alert(title: Text("Error!"), message: Text("예기치 못한 이유로 업로드가 되지 않았습니다."), dismissButton: .default(Text("Dismiss")))
                     }
@@ -100,7 +92,7 @@ struct AddTheme: View {
             if let path = path {
                 let theme = Theme(title: title, description: description, image: path)
                 themesVM.addTheme(theme: theme) { id in
-                    self.id = id
+                    presentationMode.wrappedValue.dismiss()
                     isActive = "go"
                 }
             } else {
@@ -165,6 +157,6 @@ struct AddTheme: View {
 
 struct AddTheme_Previews: PreviewProvider {
     static var previews: some View {
-        AddTheme(root: .constant(true))
+        AddTheme()
     }
 }

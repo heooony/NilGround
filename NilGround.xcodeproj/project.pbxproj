@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B80518A52872D44300E984DA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80518A42872D44300E984DA /* Theme.swift */; };
-		B80518A72872F51700E984DA /* ThemeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80518A62872F51700E984DA /* ThemeCardView.swift */; };
-		B80518AE2873229B00E984DA /* ThemeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80518AD2873229B00E984DA /* ThemeDetailView.swift */; };
 		B80518B028733DEA00E984DA /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80518AF28733DEA00E984DA /* StarsView.swift */; };
 		B8057750287BC1F90079B5DE /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B805774F287BC1F90079B5DE /* AppTheme.swift */; };
 		B82EDC6A28751D3D00FCA14D /* MainThemeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82EDC6928751D3D00FCA14D /* MainThemeItem.swift */; };
@@ -31,18 +29,17 @@
 		B85F1B8F2869F1FC007A3AB3 /* NanumMyeongjo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B8D2869F1E5007A3AB3 /* NanumMyeongjo-ExtraBold.ttf */; };
 		B85F1B902869F1FF007A3AB3 /* NanumMyeongjo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B8E2869F1E5007A3AB3 /* NanumMyeongjo-Regular.ttf */; };
 		B85F1B912869F201007A3AB3 /* NanumMyeongjo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B85F1B8C2869F1E5007A3AB3 /* NanumMyeongjo-Bold.ttf */; };
+		B8679F2B288A78CA00303897 /* SpotListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8679F2A288A78CA00303897 /* SpotListView.swift */; };
+		B8679F2D288A897500303897 /* SpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8679F2C288A897500303897 /* SpotView.swift */; };
 		B8A4768C2873F24500527F71 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A4768B2873F24500527F71 /* Spot.swift */; };
 		B8AF4BE12872ACB100DF3E48 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AF4BE02872ACB100DF3E48 /* HexColor.swift */; };
 		B8B3B6BD288910310070C88D /* ThemeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B3B6BC288910310070C88D /* ThemeListViewModel.swift */; };
 		B8B3B6C428894CC70070C88D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8B3B6C328894CC70070C88D /* GoogleService-Info.plist */; };
 		B8F27E5E28741C8D00AB126E /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E5D28741C8D00AB126E /* CustomCorner.swift */; };
 		B8F27E6028741C8F00AB126E /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E5F28741C8F00AB126E /* BlurView.swift */; };
-		B8F27E6228741D2900AB126E /* SpotCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E6128741D2900AB126E /* SpotCardItem.swift */; };
 		B8F27E6828742A8400AB126E /* Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E6728742A8400AB126E /* Stars.swift */; };
 		B8F27E6A28742A8800AB126E /* Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E6928742A8800AB126E /* Likes.swift */; };
 		B8F27E6D28742EBD00AB126E /* ThemeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E6C28742EBD00AB126E /* ThemeCellViewModel.swift */; };
-		B8F27E7628743E3900AB126E /* MainCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E7528743E3900AB126E /* MainCard.swift */; };
-		B8F27E7828743E5600AB126E /* MainCardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E7728743E5600AB126E /* MainCardDetail.swift */; };
 		B8F27E852874478B00AB126E /* ThemeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F27E842874478B00AB126E /* ThemeRepository.swift */; };
 		B8F48951286B0B6E005788F0 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F48950286B0B6E005788F0 /* ScreenSize.swift */; };
 		C472D4AC0EC35A5F2E19A523 /* Pods_NilGround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC0484B68B8A4D91A2EA366 /* Pods_NilGround.framework */; };
@@ -52,8 +49,6 @@
 		69562D02E4785D0B08A0E2B4 /* Pods-NilGround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NilGround.release.xcconfig"; path = "Target Support Files/Pods-NilGround/Pods-NilGround.release.xcconfig"; sourceTree = "<group>"; };
 		9E292D06FC3A67919D063C62 /* Pods-NilGround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NilGround.debug.xcconfig"; path = "Target Support Files/Pods-NilGround/Pods-NilGround.debug.xcconfig"; sourceTree = "<group>"; };
 		B80518A42872D44300E984DA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		B80518A62872F51700E984DA /* ThemeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCardView.swift; sourceTree = "<group>"; };
-		B80518AD2873229B00E984DA /* ThemeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailView.swift; sourceTree = "<group>"; };
 		B80518AF28733DEA00E984DA /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		B805774F287BC1F90079B5DE /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		B82EDC6928751D3D00FCA14D /* MainThemeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainThemeItem.swift; sourceTree = "<group>"; };
@@ -76,6 +71,8 @@
 		B85F1B8C2869F1E5007A3AB3 /* NanumMyeongjo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Bold.ttf"; sourceTree = "<group>"; };
 		B85F1B8D2869F1E5007A3AB3 /* NanumMyeongjo-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-ExtraBold.ttf"; sourceTree = "<group>"; };
 		B85F1B8E2869F1E5007A3AB3 /* NanumMyeongjo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Regular.ttf"; sourceTree = "<group>"; };
+		B8679F2A288A78CA00303897 /* SpotListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListView.swift; sourceTree = "<group>"; };
+		B8679F2C288A897500303897 /* SpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotView.swift; sourceTree = "<group>"; };
 		B8A4768B2873F24500527F71 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		B8AF4BE02872ACB100DF3E48 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		B8B3B6BC288910310070C88D /* ThemeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThemeListViewModel.swift; path = ../Repository/ThemeListViewModel.swift; sourceTree = "<group>"; };
@@ -83,12 +80,9 @@
 		B8C91495286ACD9200D80CCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B8F27E5D28741C8D00AB126E /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 		B8F27E5F28741C8F00AB126E /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
-		B8F27E6128741D2900AB126E /* SpotCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCardItem.swift; sourceTree = "<group>"; };
 		B8F27E6728742A8400AB126E /* Stars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stars.swift; sourceTree = "<group>"; };
 		B8F27E6928742A8800AB126E /* Likes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Likes.swift; sourceTree = "<group>"; };
 		B8F27E6C28742EBD00AB126E /* ThemeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCellViewModel.swift; sourceTree = "<group>"; };
-		B8F27E7528743E3900AB126E /* MainCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCard.swift; sourceTree = "<group>"; };
-		B8F27E7728743E5600AB126E /* MainCardDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardDetail.swift; sourceTree = "<group>"; };
 		B8F27E842874478B00AB126E /* ThemeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeRepository.swift; sourceTree = "<group>"; };
 		B8F48950286B0B6E005788F0 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		BCC0484B68B8A4D91A2EA366 /* Pods_NilGround.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NilGround.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,10 +120,6 @@
 		B82EDC6828751ADE00FCA14D /* Update */ = {
 			isa = PBXGroup;
 			children = (
-				B80518A62872F51700E984DA /* ThemeCardView.swift */,
-				B8F27E7728743E5600AB126E /* MainCardDetail.swift */,
-				B8F27E7528743E3900AB126E /* MainCard.swift */,
-				B80518AD2873229B00E984DA /* ThemeDetailView.swift */,
 			);
 			path = Update;
 			sourceTree = "<group>";
@@ -170,6 +160,8 @@
 		B8584B8A2878083200669D68 /* Spot */ = {
 			isa = PBXGroup;
 			children = (
+				B8679F2A288A78CA00303897 /* SpotListView.swift */,
+				B8679F2C288A897500303897 /* SpotView.swift */,
 			);
 			path = Spot;
 			sourceTree = "<group>";
@@ -224,7 +216,6 @@
 		B85F1B842869DE7F007A3AB3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B8F27E6128741D2900AB126E /* SpotCardItem.swift */,
 				B8F27E5F28741C8F00AB126E /* BlurView.swift */,
 				B8F27E5D28741C8D00AB126E /* CustomCorner.swift */,
 				B80518AF28733DEA00E984DA /* StarsView.swift */,
@@ -431,8 +422,8 @@
 				B8F27E6828742A8400AB126E /* Stars.swift in Sources */,
 				B83F6EA02875E0C5005035E2 /* AddTheme.swift in Sources */,
 				B853087D287C3BAD00F4EA1E /* SignInView.swift in Sources */,
+				B8679F2D288A897500303897 /* SpotView.swift in Sources */,
 				B8AF4BE12872ACB100DF3E48 /* HexColor.swift in Sources */,
-				B80518AE2873229B00E984DA /* ThemeDetailView.swift in Sources */,
 				B8F27E6028741C8F00AB126E /* BlurView.swift in Sources */,
 				B8584B822877F4A600669D68 /* SpotCellViewModel.swift in Sources */,
 				B8584B842877F4B100669D68 /* SpotListViewModel.swift in Sources */,
@@ -442,21 +433,18 @@
 				B8B3B6BD288910310070C88D /* ThemeListViewModel.swift in Sources */,
 				B85F1B712869BF98007A3AB3 /* ContentView.swift in Sources */,
 				B8F27E852874478B00AB126E /* ThemeRepository.swift in Sources */,
-				B80518A72872F51700E984DA /* ThemeCardView.swift in Sources */,
+				B8679F2B288A78CA00303897 /* SpotListView.swift in Sources */,
 				B82EDC6A28751D3D00FCA14D /* MainThemeItem.swift in Sources */,
 				B85F1B812869C056007A3AB3 /* MainView.swift in Sources */,
-				B8F27E6228741D2900AB126E /* SpotCardItem.swift in Sources */,
 				B8584B862877F4E600669D68 /* SpotRepository.swift in Sources */,
 				B80518A52872D44300E984DA /* Theme.swift in Sources */,
 				B85F1B6F2869BF98007A3AB3 /* NilGroundApp.swift in Sources */,
 				B8A4768C2873F24500527F71 /* Spot.swift in Sources */,
-				B8F27E7628743E3900AB126E /* MainCard.swift in Sources */,
 				B80518B028733DEA00E984DA /* StarsView.swift in Sources */,
 				B84490B828765E4D00086B4C /* PhotoPicker.swift in Sources */,
 				B853087F287C3BB400F4EA1E /* SignUpView.swift in Sources */,
 				B8F27E5E28741C8D00AB126E /* CustomCorner.swift in Sources */,
 				B8F48951286B0B6E005788F0 /* ScreenSize.swift in Sources */,
-				B8F27E7828743E5600AB126E /* MainCardDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
